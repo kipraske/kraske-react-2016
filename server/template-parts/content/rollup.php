@@ -1,12 +1,11 @@
 <?php
 /**
- * Template part for displaying results in search pages.
+ * Template part for displaying posts.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Kraske-react-2016
+ * @package _s
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
