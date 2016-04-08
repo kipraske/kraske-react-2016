@@ -48,9 +48,6 @@ function kraske_react_2016_entry_footer() {
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'kraske-react-2016' ) );
-		if ( $categories_list && kraske_react_2016_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'kraske-react-2016' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'kraske-react-2016' ) );
