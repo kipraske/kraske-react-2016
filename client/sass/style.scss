@@ -2,8 +2,7 @@
 Theme Name: Kraske-react-2016
 Author: Kip Raske
 Author URI: http://kristoferraske.com
-Description: Theme utilizing react.js and the wordpress REST API, but still
-should work where those things are not available.
+Description: Theme utilizing react.js and the wordpress REST API, but still should work where those things are not available.
 Version: 0.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,5 +18,15 @@ to build a underscores-based react theme.
    http://underscores.me/, (C) 2012-2015 Automattic, Inc.
  - Picard is an experimental react prototype https://github.com/Automattic/Picard
    also by Automattic
-
 */
+
+@import 'variables';
+@import 'normalize';
+@import 'typography';
+@import 'forms';
+@import 'links';
+@import 'accessibility';
+@import 'layout';
+@import 'media';
+@import 'navigation';
+@import 'comments';

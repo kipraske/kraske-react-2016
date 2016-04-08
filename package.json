@@ -1,0 +1,29 @@
+{
+  "name": "kraske-react-2016",
+  "version": "1.0.0",
+  "description": "Theme utilizing react.js and the wordpress REST API, but still should work where those things are not available.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kipraske/kraske-react-2016.git"
+  },
+  "keywords": [
+    "wordpress",
+    "theme"
+  ],
+  "author": "Kristofer Raske",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/kipraske/kraske-react-2016/issues"
+  },
+  "homepage": "https://github.com/kipraske/kraske-react-2016",
+  "devDependencies": {
+    "node-sass": "^3.4.2"
+  }
+}
