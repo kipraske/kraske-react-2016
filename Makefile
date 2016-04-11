@@ -2,27 +2,26 @@
 NODE_BIN := node_modules/.bin
 
 # Make Commands and variables
-FINAL_MAIN_STYLE := style.css
-FINAL_MAIN_COMPONENT := client/components/app.js
-BUILD_DEPS = \
-	$(FINAL_MAIN_STYLE) \
-	$(FINAL_MAIN_COMPONENT);
+build : build-css build-js
 
-build : $(BUILD_DEPS)
+build-css: style.css
+build-js: client/components/app.js
+
 clean :
-	@rm $(BUILD_DEPS)
-
+	@rm client/components/app.js style.css
 
 # SASS Stuff
 SASS ?= $(NODE_BIN)/node-sass --include-path 'client/sass'
 SASS_FILES := $(wildcard client/sass/*.scss)
 
-$(FINAL_MAIN_STYLE): $(SASS_FILES)
+style.css: $(SASS_FILES)
 	$(SASS) client/sass/style.scss $@
 
 # JS Stuff
 BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ] --debug
 COMPONENTS := $(wildcard client/components/*.jsx)
 
-$(FINAL_MAIN_COMPONENT): $(COMPONENTS)
-	$(BROWSERIFY) client/components/index.jsx -o $@
+client/components/app.js: $(COMPONENTS)
+	@echo "Compiling client/components/app.js from components..."
+	@$(BROWSERIFY) client/components/index.jsx -o $@
+	@echo "...Successfully built client/components/app.js"
