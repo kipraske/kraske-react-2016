@@ -69,7 +69,18 @@ var Router = React.createClass({
 		// });
 
 		page( '*', function ( ctx ) {
-			console.log("Let navigate yeah!");
+			var pathName = ctx.pathname;
+			var newQuery = ctx.querystring + 'return_instead=json';
+			var dataPath = pathName + '?' + newQuery;
+			request
+				.get( dataPath )
+				.end( function( err, res ) {
+					if (err) {
+						console.error(err);
+					}
+					console.log(res);
+				});
+			console.log(dataPath);
 		});
 
 		page.start();
