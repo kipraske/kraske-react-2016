@@ -82,6 +82,8 @@ add_action( 'after_setup_theme', 'kraske_react_2016_content_width', 0 );
 function kraske_react_2016_scripts() {
 	wp_enqueue_style( 'kraske-react-2016-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'kraske-react-2016-components', get_template_directory_uri() . '/client/components/app.js', array(), '20151215', true );
+
 	wp_enqueue_script( 'kraske-react-2016-navigation', get_template_directory_uri() . '/client/static/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'kraske-react-2016-skip-link-focus-fix', get_template_directory_uri() . '/client/static/js/skip-link-focus-fix.js', array(), '20151215', true );
