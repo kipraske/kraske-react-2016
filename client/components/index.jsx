@@ -1,16 +1,10 @@
 /**
- * External dependencies
+ * Main entry point for react components
  */
+
 var React = require( 'react' );
-
-/**
- * Internal dependencies
- */
+var ReactDOM = require('react-dom');
 var Router = require( './router.jsx' );
-
-/**
- * Make it so…
- */
-React.render(
+ReactDOM.render(
 	<Router />, document.getElementById( 'main' )
 );

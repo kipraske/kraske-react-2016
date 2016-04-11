@@ -21,7 +21,7 @@ $(FINAL_MAIN_STYLE): $(SASS_FILES)
 	$(SASS) client/sass/style.scss $@
 
 # JS Stuff
-BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ]
+BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ] --debug
 COMPONENTS := $(wildcard client/components/*.jsx)
 
 $(FINAL_MAIN_COMPONENT): $(COMPONENTS)
