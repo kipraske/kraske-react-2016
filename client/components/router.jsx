@@ -3,41 +3,20 @@
  */
 
 var React = require( 'react' );
-var page = require( 'page' );
+var urlRouter = require( 'page' );
 var request = require( 'superagent' );
 
-var Content = require( './content/content.jsx' );
+var Page = require( './Page.jsx' );
+class Router extends React.Component {
 
-var Router = React.createClass({
+	constructor(props) {
+		TODO - here I am 
+	}
 
-	componentDidMount: function() {
+	componentDidMount() {
 
 		var self = this;
 
-		// page( '/', function ( ctx ) {
-		// 	var data,
-		// 		slug = ctx.params.slug,
-		// 		url = "/wp-json/posts";
-		// 	request
-		// 		.get( url )
-		// 		.end( function( err, res ) {
-		// 			data = JSON.parse( res.text );
-		// 			self.setState({ component: <Content data={ data } bodyClass="index" /> });
-		// 		});
-		// });
-		//
-		// page( '/:year/:month/:day/:slug', function ( ctx ) {
-		// 	var data,
-		// 		slug = ctx.params.slug,
-		// 		url = "/wp-json/posts/?filter[name]=" + slug;
-		// 	request
-		// 		.get( url )
-		// 		.end( function( err, res ) {
-		// 			data = JSON.parse( res.text );
-		// 			self.setState({ component: <Content data={ data } bodyClass="single" /> });
-		// 		});
-		// });
-		//
 		// page( '*', function ( ctx ) {
 		// 	if ( ctx.state.pageData ) {
 		// 		self.setState({ component: <Content data={ ctx.state.pageData } bodyClass="page" /> });
@@ -66,7 +45,7 @@ var Router = React.createClass({
 		// 	}
 		// });
 
-		page( '*', function ( ctx ) {
+		urlRouter( '*', function ( ctx ) {
 			var pathName = ctx.pathname;
 			var newQuery = ctx.querystring + 'return_instead=posts-json';
 			var dataPath = pathName + '?' + newQuery;
@@ -77,26 +56,23 @@ var Router = React.createClass({
 						console.error(err);
 						return;
 					}
-					var return_posts = JSON.parse(res.text);
-					console.log(return_posts);
+					var returnPosts = JSON.parse(res.text);
+					self.setState({posts: returnPosts});
+					console.log(returnPosts);
 				});
-			console.log(dataPath);
 		});
 
-		page({
+		urlRouter({
 			dispatch: false
 		});
-
-	},
-
-	getInitialState: function() {
-		return { component: <div /> };
-	},
-
-	render: function() {
-		return this.state.component;
 	}
 
-});
+	render() {
+		return (
+			<Page posts={this.state.posts} />
+		);
+	}
+
+}
 
 module.exports = Router;
