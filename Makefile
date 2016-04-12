@@ -9,6 +9,7 @@ build-js: client/js/app.js
 
 clean :
 	@rm client/js/*.js
+	@rm style.css
 
 # SASS Stuff
 SASS ?= $(NODE_BIN)/node-sass --include-path 'client/sass'
@@ -18,13 +19,12 @@ style.css: $(SASS_FILES)
 	$(SASS) client/sass/style.scss $@
 
 # JS Stuff
-BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ]
+BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ] --debug
 COMPONENTS := $(wildcard client/components/*.jsx)
-
 STATIC_LIBS = react react-dom page superagent
 
 client/js/lib.js: client/static/js/lib-bundler.js
-	$(BROWSERIFY) $(addprefix -r ,$(STATIC_LIBS) ) -o $@
+	$(BROWSERIFY) $(addprefix -r ,$(STATIC_LIBS) ) -o $@ --insert-globals
 
 client/js/app.js: $(COMPONENTS) client/js/lib.js
-	$(BROWSERIFY) client/components/index.jsx $(addprefix -x ,$(STATIC_LIBS) ) -o $@ --debug
+	$(BROWSERIFY) client/components/index.jsx $(addprefix -x ,$(STATIC_LIBS) ) -o $@
