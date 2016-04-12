@@ -30,16 +30,15 @@ function hijack_main_loop_to_return_instead( $query ) {
 		// So we need to manually fetch them here:
 		$return_query = new WP_Query($query->query);
 		$filtered_posts = array();
-		foreach( $return_query->posts as $post ){
+		while ( $return_query->have_posts() ) {
+			$return_query->the_post();
 			$filtered_posts[] = array(
-				ID => (int) $post->ID,
-				comment_count => (int) $post->comment_count,
-				comment_status => $post->comment_status,
-				author_id => $post->post_author,
-				post_content => wp_kses_post($post->post_content),
+				ID => get_the_id(),
+				author => get_the_author(),
+				post_content => wp_kses_post( apply_filters('the_content', get_the_content() ) ),
 				post_date => $post->post_date,
-				post_excerpt => esc_html($post->post_excerpt),
-				post_title => esc_html($post->post_ttile),
+				post_excerpt => esc_html( get_the_excerpt() ),
+				post_title => esc_html( get_the_title() ),
 			);
 		}
 
