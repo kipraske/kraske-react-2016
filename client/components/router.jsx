@@ -79,7 +79,8 @@ var Router = React.createClass({
 						console.error(err);
 						return;
 					}
-					console.log(res);
+					var return_posts = JSON.parse(res.text);
+					console.log(return_posts);
 				});
 			console.log(dataPath);
 		});
