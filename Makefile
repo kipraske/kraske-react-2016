@@ -5,10 +5,10 @@ NODE_BIN := node_modules/.bin
 build : build-css build-js
 
 build-css: style.css
-build-js: client/components/app.js
+build-js: client/js/app.js
 
 clean :
-	@rm client/components/app.js style.css
+	@rm client/js/*.js
 
 # SASS Stuff
 SASS ?= $(NODE_BIN)/node-sass --include-path 'client/sass'
@@ -18,10 +18,13 @@ style.css: $(SASS_FILES)
 	$(SASS) client/sass/style.scss $@
 
 # JS Stuff
-BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ] --debug
+BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ]
 COMPONENTS := $(wildcard client/components/*.jsx)
 
-client/components/app.js: $(COMPONENTS)
-	@echo "Compiling client/components/app.js from components..."
-	@$(BROWSERIFY) client/components/index.jsx -o $@
-	@echo "...Successfully built client/components/app.js"
+STATIC_LIBS = react react-dom page superagent
+
+client/js/lib.js: client/static/js/lib-bundler.js
+	$(BROWSERIFY) $(addprefix -r ,$(STATIC_LIBS) ) -o $@
+
+client/js/app.js: $(COMPONENTS) client/js/lib.js
+	$(BROWSERIFY) client/components/index.jsx $(addprefix -x ,$(STATIC_LIBS) ) -o $@ --debug

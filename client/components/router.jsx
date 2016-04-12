@@ -1,13 +1,11 @@
 /**
- * External dependencies
+ *
  */
-var React = require( 'react' ),
-	page = require( 'page' ),
-	request = require( 'superagent' );
 
-/**
- * Internal dependencies
- */
+var React = require( 'react' );
+var page = require( 'page' );
+var request = require( 'superagent' );
+
 var Content = require( './content/content.jsx' );
 
 var Router = React.createClass({
