@@ -108,3 +108,9 @@ require get_template_directory() . '/server/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/server/inc/customizer.php';
+
+
+/**
+ * Hijack the main loop to get data instead of html
+ */
+require get_template_directory() . '/server/inc/return-instead.php';
