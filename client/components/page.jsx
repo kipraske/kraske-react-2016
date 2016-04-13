@@ -22,7 +22,13 @@ const Page = (props) => {
 		<div>
 			<HeaderSkipLink />
 			<Header />
-			{contentElement}
+			<div id="content" className="site-content">
+				<div id="primary" className="content-area">
+					<main id="main" className="site-main" role="main">
+						{contentElement}
+					</main>
+				</div>
+			</div>
 			<Footer />
 		</div>
 	);

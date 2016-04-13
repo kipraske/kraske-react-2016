@@ -2,9 +2,11 @@ var React = require('react');
 
 const Footer = (props) => {
 	return (
-		<div>
-		Hey this is is the footer template
-		</div>
+		<footer id="colophon" className="site-footer" role="contentinfo">
+			<div className="site-info">
+				**HERE IS THE FOOTER**
+			</div>
+		</footer>
 	);
 }
 
