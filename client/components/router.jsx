@@ -16,8 +16,7 @@ class Router extends React.Component {
 		}
 	}
 
-	componentDidMount() {
-
+	componentWillMount() {
 		var self = this;
 
 		urlRouter( '*', function ( ctx ) {
@@ -37,9 +36,7 @@ class Router extends React.Component {
 				});
 		});
 
-		urlRouter({
-			dispatch: false
-		});
+		urlRouter.start();
 	}
 
 	render() {

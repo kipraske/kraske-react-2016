@@ -1,11 +1,11 @@
 var React = require('react');
 
-const None = (props) => {
+const Rollup = (props) => {
 	return (
 		<div>
-		Hey this is this no-posts template
+		Hey this is the Rollup template
 		</div>
 	);
 }
 
-module.exports = None;
+module.exports = Rollup;

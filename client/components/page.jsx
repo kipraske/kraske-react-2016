@@ -6,12 +6,12 @@ var Single = require('./content/single.jsx');
 var None = require('./content/none.jsx');
 var Footer = require('./footer.jsx');
 
-const Page = (posts) => {
-	var numberOfPosts = posts.length;
+const Page = (props) => {
+	var numberOfPosts = props.posts.length;
 	var contentElement;
-	if (posts.length > 1) {
+	if (numberOfPosts > 1) {
 		contentElement = <Rollup />;
-	} else if (posts.length === 1) {
+	} else if (numberOfPosts === 1) {
 		contentElement = <Single />;
 	} else {
 		contentElement = <None />;
