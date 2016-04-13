@@ -1,9 +1,11 @@
 var React = require('react');
 
 const None = (props) => {
-	<div>
+	return (
+		<div>
 		Hey this is this no-posts template
-	</div>
+		</div>
+	);
 }
 
 module.exports = None;
