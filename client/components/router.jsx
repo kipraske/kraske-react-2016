@@ -16,11 +16,15 @@ class Router extends React.Component {
 	constructor(props) {
 		super(props);
     this.state = {
+			hasServerData: false,
+			initialPageMarkup: {
+				__html: this.props.initialPage
+			},
 			posts: []
 		}
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		var self = this;
 
 		urlRouter( '*', function ( ctx ) {
@@ -35,18 +39,25 @@ class Router extends React.Component {
 						return;
 					}
 					var returnPosts = JSON.parse(res.text);
-					self.setState({posts: returnPosts});
+					self.setState({
+						hasServerData: true,
+						posts: returnPosts
+					});
 					console.log(returnPosts);
 				});
 		});
 
-		urlRouter.start();
+		urlRouter({
+			dispatch: false
+		});
 	}
 
 	render() {
-		return (
-			<Page posts={this.state.posts} />
-		);
+		if (this.state.hasServerData) {
+			return <Page posts={this.state.posts} />
+		} else {
+			return <div dangerouslySetInnerHTML={this.state.initialPageMarkup} />
+		}
 	}
 
 }
