@@ -2,9 +2,16 @@ var React = require('react');
 
 const Header = (props) => {
 	return (
-		<div>
-		Hey this is is the Header template
-		</div>
+		<header id="masthead" className="site-header" role="banner">
+			<div className="site-branding">
+				**BRANDING GOES HERE**
+			</div>
+
+			<nav id="site-navigation" className="main-navigation" role="navigation">
+				<button className="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
+					**MENU GOES HERE**
+			</nav>
+		</header>
 	);
 }
 

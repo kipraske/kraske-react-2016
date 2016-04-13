@@ -1,6 +1,7 @@
 var React = require('react');
 
 var Header = require('./header.jsx');
+var HeaderSkipLink = require('./misc/header-skip-link.jsx');
 var Rollup = require('./content/rollup.jsx');
 var Single = require('./content/single.jsx');
 var None = require('./content/none.jsx');
@@ -19,6 +20,7 @@ const Page = (props) => {
 
 	return (
 		<div>
+			<HeaderSkipLink />
 			<Header />
 			{contentElement}
 			<Footer />
