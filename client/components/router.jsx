@@ -1,5 +1,9 @@
 /**
- *
+ * Wrapper component for React Application which manages state via the
+ * wordpress URL. Using the 'page' library in npm we can hijack normal link
+ * execution and instead use the event to get the new data for React to consume
+ * all the while updating the current url using the History API to make it
+ * appear that you have moved to a new page
  */
 
 var React = require( 'react' );

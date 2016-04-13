@@ -32,14 +32,7 @@ function hijack_main_loop_to_return_instead( $query ) {
 		$filtered_posts = array();
 		while ( $return_query->have_posts() ) {
 			$return_query->the_post();
-			$filtered_posts[] = array(
-				ID => get_the_id(),
-				author => get_the_author(),
-				post_content => wp_kses_post( apply_filters('the_content', get_the_content() ) ),
-				post_date => $post->post_date,
-				post_excerpt => esc_html( get_the_excerpt() ),
-				post_title => esc_html( get_the_title() ),
-			);
+			$filtered_posts[] = require( get_template_directory() . '/server/template-parts/data/filtered-post.php');
 		}
 
 		echo json_encode($filtered_posts);
