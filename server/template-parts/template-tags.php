@@ -1,9 +1,8 @@
 <?php
 /**
- * Custom template tags for this theme.
- *
- * Eventually, some of the functionality here could be replaced by core features.
- *
+ * Custom template tags for this theme because we need to be able to send these
+ * via JSON we need to ensure that these return the HTML instead of echoing them
+ * 
  * @package Kraske-react-2016
  */
 
@@ -34,7 +33,7 @@ function kraske_react_2016_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	return '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 }
 endif;
@@ -44,6 +43,8 @@ if ( ! function_exists( 'kraske_react_2016_entry_footer' ) ) :
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function kraske_react_2016_entry_footer() {
+	ob_start();
+
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
@@ -72,5 +73,7 @@ function kraske_react_2016_entry_footer() {
 		'<span class="edit-link">',
 		'</span>'
 	);
+
+	return ob_get_clean();
 }
 endif;

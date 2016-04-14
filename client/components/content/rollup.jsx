@@ -11,8 +11,8 @@ const Rollup = (props) => {
 			<Entry.Header
 				title={props.post.title}
 				permalink={props.post.permalink}
-				meta={props.post.posted_on}
-				post_type={props.post.template_tags.post_type}/>
+				meta={props.post.template_tags.posted_on}
+				post_type={props.post.post_type}/>
 			<Entry.Summary excerpt={props.post.excerpt} />
 			<Entry.Footer content={props.post.template_tags.entry_footer} />
 		</article>

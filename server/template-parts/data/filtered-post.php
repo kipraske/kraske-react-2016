@@ -11,8 +11,7 @@ return array(
 	excerpt => esc_html( get_the_excerpt() ),
 	title => esc_html( get_the_title() ),
 	template_tags => array(
-		// TODO I need to have template tags return html rather than echoing
-		posted_on => 'POSTED ON',
-		entry_footer => 'ENTRY FOOTER'
+		posted_on => kraske_react_2016_posted_on(),
+		entry_footer => kraske_react_2016_entry_footer()
 	),
 );
