@@ -34,7 +34,6 @@ function hijack_main_loop_to_return_instead( $query ) {
 			$return_query->the_post();
 			$filtered_posts[] = require( get_template_directory() . '/server/template-parts/data/filtered-post.php');
 		}
-
 		echo json_encode($filtered_posts);
 		die();
 	}

@@ -20,7 +20,12 @@ style.css: $(SASS_FILES)
 
 # JS Stuff
 BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ] --debug
-COMPONENTS := $(wildcard client/components/*.jsx)
+COMPONENTS := $(shell \
+	find client/components/. \
+		-not \( -path './.git' -prune \) \
+		-not \( -path './node_modules' -prune \) \
+		-type f \( -name '*.jsx' \) \
+)
 STATIC_LIBS = react react-dom page superagent
 
 client/js/lib.js: client/static/js/lib-bundler.js

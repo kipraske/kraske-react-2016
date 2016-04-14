@@ -1,10 +1,18 @@
 <?php
 
 return array(
-	ID => get_the_id(),
+	id => get_the_id(),
 	author => get_the_author(),
-	post_content => wp_kses_post( apply_filters('the_content', get_the_content() ) ),
-	post_date => $post->post_date,
-	post_excerpt => esc_html( get_the_excerpt() ),
-	post_title => esc_html( get_the_title() ),
+	permalink => esc_url( get_permalink() ),
+	post_type => get_post_type(),
+	css_class => esc_attr( get_post_class() ),
+	content => wp_kses_post( apply_filters( 'the_content', get_the_content() ) ),
+	date => get_the_date(),
+	excerpt => esc_html( get_the_excerpt() ),
+	title => esc_html( get_the_title() ),
+	template_tags => array(
+		// TODO I need to have template tags return html rather than echoing
+		posted_on => 'POSTED ON',
+		entry_footer => 'ENTRY FOOTER'
+	),
 );

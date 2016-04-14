@@ -11,9 +11,13 @@ const Page = (props) => {
 	var numberOfPosts = props.posts.length;
 	var contentElement;
 	if (numberOfPosts > 1) {
-		contentElement = <Rollup />;
+		contentElement = [];
+		for (let post of props.posts){
+			contentElement.push(<Rollup post={post} key={post.id}/>);
+		}
 	} else if (numberOfPosts === 1) {
-		contentElement = <Single />;
+		let post = props.posts[0];
+		contentElement = <Single post={post}/>;
 	} else {
 		contentElement = <None />;
 	}
