@@ -1,6 +1,9 @@
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
+/**
+ * Loosely based on the default _s normalization CSS which are in turn based
+ * off of normalize.css: http://necolas.github.com/normalize.css/
+ */
+
+
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -212,10 +215,6 @@ th {
 	padding: 0;
 }
 
-
-/*--------------------------------------------------------------
-# Elements -- TODO --> Move to normalize and simplify
---------------------------------------------------------------*/
 html {
 	box-sizing: border-box;
 }

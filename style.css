@@ -19,9 +19,10 @@ to build a underscores-based react theme.
  - Picard is an experimental react prototype https://github.com/Automattic/Picard
    also by Automattic
 */
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
+/**
+ * Loosely based on the default _s normalization CSS which are in turn based
+ * off of normalize.css: http://necolas.github.com/normalize.css/
+ */
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -194,9 +195,6 @@ td,
 th {
   padding: 0; }
 
-/*--------------------------------------------------------------
-# Elements -- TODO --> Move to normalize and simplify
---------------------------------------------------------------*/
 html {
   box-sizing: border-box; }
 
@@ -266,7 +264,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
