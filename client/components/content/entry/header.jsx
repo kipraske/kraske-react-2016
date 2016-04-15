@@ -3,10 +3,9 @@ var React = require('react');
 const Header = (props) => {
 	var entryMeta;
 	if (props.post_type === 'post'){
+		var metaHTML = {__html: props.meta};
 		entryMeta = (
-			<div className="entry-meta">
-				{props.meta}
-			</div>
+			<div className="entry-meta" dangerouslySetInnerHTML={metaHTML} ></div>
 		)
 	}
 
