@@ -14,7 +14,7 @@
 		the_title( '<h1 class="entry-title">', '</h1>' );
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php kraske_react_2016_posted_on(); ?>
+			<?php echo kraske_react_2016_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -35,6 +35,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php kraske_react_2016_entry_footer(); ?>
+		<?php comments_template(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

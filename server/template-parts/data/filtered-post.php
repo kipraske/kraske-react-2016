@@ -14,6 +14,5 @@ return array(
 	// on a later iteration
 	template_tags => array(
 		posted_on => kraske_react_2016_posted_on(),
-		entry_footer => kraske_react_2016_entry_footer()
 	),
 );

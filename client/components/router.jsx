@@ -29,8 +29,12 @@ class Router extends React.Component {
 
 		urlRouter( '*', function ( ctx ) {
 			var pathName = ctx.pathname;
-			var newQuery = ctx.querystring + 'return_instead=posts-json';
-			var dataPath = pathName + '?' + newQuery;
+			var seperatorApersand = '';
+			if (ctx.querystring){
+				seperatorApersand = '&';
+			}
+			var newQuery = '?' + ctx.querystring + seperatorApersand + 'return_instead=posts-json';
+			var dataPath = pathName + newQuery;
 			request
 				.get( dataPath )
 				.end( function( err, res ) {

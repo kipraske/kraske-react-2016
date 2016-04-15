@@ -14,7 +14,6 @@ const Rollup = (props) => {
 				meta={props.post.template_tags.posted_on}
 				post_type={props.post.post_type}/>
 			<Entry.Summary excerpt={props.post.excerpt} />
-			<Entry.Footer content={props.post.template_tags.entry_footer} />
 		</article>
 	);
 }
