@@ -20,6 +20,15 @@ to build a underscores-based react theme.
    also by Automattic
 */
 /**
+ * Variables for SASS
+ *
+ * Note that I am not using too many global things like this. The theme is pretty
+ * Simple by design so there isn't much to keep track of
+ */
+/**
+ * Colors
+ */
+/**
  * Loosely based on the default _s normalization CSS which are in turn based
  * off of normalize.css: http://necolas.github.com/normalize.css/
  */
@@ -427,15 +436,15 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  color: #00008B; }
 
 a:visited {
-  color: purple; }
+  color: #8B0000; }
 
 a:hover,
 a:focus,
 a:active {
-  color: midnightblue; }
+  color: black; }
 
 a:focus {
   outline: thin dotted; }
@@ -491,7 +500,8 @@ Header Layouts
   margin: 2em 0;
   height: 4em;
   background-color: black;
-  color: white; }
+  color: white;
+  box-shadow: 0 0 1em 0.25em #00008B; }
 
 /*Creates the header bar-effect*/
 .site-header:before {
@@ -507,10 +517,10 @@ Header Layouts
   top: 1em;
   width: 6em;
   left: 10%;
-  border: solid 1px black;
   background-color: white;
   border-radius: 3em;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 0 1em 0.25em #00008B; }
 
 .site-logo img {
   line-height: 6em; }
