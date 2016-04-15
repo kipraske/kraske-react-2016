@@ -2,10 +2,11 @@ var React = require('react');
 var Entry = {
 	Header : require('./entry/header.jsx'),
 	Footer : require('./entry/footer.jsx'),
-	Summary : require('./entry/summary.jsx')
 }
 
 const Rollup = (props) => {
+	var excerptHTML = {__html: props.post.excerpt};
+
 	return (
 		<article id={props.post.id} className={props.post.css_class}>
 			<Entry.Header
@@ -13,7 +14,7 @@ const Rollup = (props) => {
 				permalink={props.post.permalink}
 				meta={props.post.template_tags.posted_on}
 				post_type={props.post.post_type}/>
-			<Entry.Summary excerpt={props.post.excerpt} />
+			<div className="entry-summary" dangerouslySetInnerHTML={excerptHTML}></div>
 		</article>
 	);
 }
