@@ -34,9 +34,9 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'kraske-react-2016' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<?php get_search_form() ?>
 		</nav><!-- #site-navigation -->
 
-		<?php get_search_form() ?>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

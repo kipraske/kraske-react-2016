@@ -1,11 +1,54 @@
-/*--------------------------------------------------------------
-## Menus
---------------------------------------------------------------*/
+/**
+ * Styles for the main header. This includes the back to top button since that
+ * starts up there
+ */
+
+/*
+Header Layouts
+ */
+
+.site-header {
+  position: relative;
+  margin: 2em 0;
+  height: 4em;
+  background-color: black;
+  color: white;
+}
+
+/*Creates the header bar-effect*/
+.site-header:before {
+  position: absolute;
+  height: 3.6em;
+  width: 100%;
+  top: 0.2em;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+}
+
+.site-logo{
+  position: fixed;
+  top: 1em;
+  width: 6em;
+  left: 10%;
+  border: solid 1px black;
+  border-radius: 3em;
+  overflow:hidden;
+}
+
+/*
+Primary Menu
+*/
 .main-navigation {
-	clear: both;
 	display: block;
-	float: left;
-	width: 100%;
+  float:right;
+}
+
+.main-navigation .menu-primary-container,
+.main-navigation .search-form {
+  vertical-align: top;
+  display: inline-block;
+  position: relative;
+  line-height: 4em;
 }
 
 .main-navigation ul {
