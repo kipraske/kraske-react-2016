@@ -24,6 +24,11 @@ function kraske_react_2016_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	// Adds a random color palette class on load.
+	$rand = rand( 1, 4);
+	$palette_class = 'color-palette-' . $rand;
+	$classes[] = $palette_class;
+
 	return $classes;
 }
 add_filter( 'body_class', 'kraske_react_2016_body_classes' );

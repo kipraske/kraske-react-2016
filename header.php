@@ -21,9 +21,9 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php  ?>>
+<body>
 <div id="app-root">
-	<div id="page" <?php body_class(array('site', 'color-palette-1')) ?> >
+	<div id="page" <?php body_class(array('site')) ?> >
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'kraske-react-2016' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">

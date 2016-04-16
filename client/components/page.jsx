@@ -17,16 +17,26 @@ class Page extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			colorScheme: 1
+			colorPalette: 'color-palette-1'
 		}
 	}
 
-	// Fancy Colors Stuff
-	static getRandColorScheme(){
+	// Update Random Color Scheme
+	getRandomPaletteClass(){
+		const minPalette = 1;
+		const maxPalette = 4;
+		let randInt = Math.floor(Math.random() * (maxPalette - minPalette) + minPalette);
+		return 'color-palette-' + randInt;
+	}
 
+	componentWillReceiveProps(){
+		let newPalette = this.getRandomPaletteClass();
+		this.setState({colorPalette: newPalette});
 	}
 
 	render(){
+
+
 		var numberOfPosts = this.props.posts.length;
 		var contentElement;
 		if (numberOfPosts > 1) {
@@ -42,7 +52,7 @@ class Page extends React.Component {
 		}
 
 		return (
-			<div id="page" className="color-palette-2">
+			<div id="page" className={this.state.colorPalette}>
 				<HeaderSkipLink />
 				<Header />
 				<div id="content" className="site-content">
