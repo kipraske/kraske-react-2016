@@ -25,7 +25,7 @@ class Page extends React.Component {
 	getRandomPaletteClass(){
 		const minPalette = 1;
 		const maxPalette = 4;
-		let randInt = Math.floor(Math.random() * (maxPalette - minPalette) + minPalette);
+		let randInt = Math.floor(Math.random() * (maxPalette - minPalette + 1) + minPalette);
 		return 'color-palette-' + randInt;
 	}
 

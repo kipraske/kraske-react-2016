@@ -442,7 +442,7 @@ textarea {
 
 .color-palette-1 .site-header,
 .color-palette-1 .site-logo {
-  box-shadow: 0 0 1em 0.25em royalblue; }
+  box-shadow: 0 0 1em 0.25em midnightblue; }
 
 .color-palette-2 a {
   color: #B90239; }
@@ -454,7 +454,7 @@ textarea {
 
 .color-palette-2 .site-header,
 .color-palette-2 .site-logo {
-  box-shadow: 0 0 1em 0.25em #B90239; }
+  box-shadow: 0 0 1em 0.25em #800025; }
 
 .color-palette-3 a {
   color: #347200; }
@@ -466,19 +466,19 @@ textarea {
 
 .color-palette-3 .site-header,
 .color-palette-3 .site-logo {
-  box-shadow: 0 0 1em 0.25em #347200; }
+  box-shadow: 0 0 1em 0.25em #144A00; }
 
 .color-palette-4 a {
-  color: #005F90; }
+  color: #006C6C; }
 
 .color-palette-4 a:hover,
 .color-palette-4 a:focus,
 .color-palette-4 a:active {
-  color: #017C7C; }
+  color: #004F80; }
 
 .color-palette-4 .site-header,
 .color-palette-4 .site-logo {
-  box-shadow: 0 0 1em 0.25em #005F90; }
+  box-shadow: 0 0 1em 0.25em #004F80; }
 
 a:visited {
   color: purple; }

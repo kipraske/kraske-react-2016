@@ -20,13 +20,13 @@ $accent-colors:
 	royalblue,
 	#B90239,
 	#347200,
-	#005F90;
+	#006C6C;
 
-$accent-hover-colors:
+$accent-dark-colors:
 	midnightblue,
 	#800025,
 	#144A00,
-	#017C7C;
+	#004F80;
 
 @for $i from 1 through length($accent-colors) {
 	.color-palette-#{$i}{
@@ -37,12 +37,12 @@ $accent-hover-colors:
 		a:hover,
 		a:focus,
 		a:active {
-			color: nth($accent-hover-colors, $i);
+			color: nth($accent-dark-colors, $i);
 		}
 
 		.site-header,
 		.site-logo {
-			box-shadow: 0 0 1em .25em nth($accent-colors, $i);
+			box-shadow: 0 0 1em .25em nth($accent-dark-colors, $i);
 		}
 	}
 }
