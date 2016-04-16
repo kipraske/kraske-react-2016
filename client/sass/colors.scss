@@ -1,0 +1,52 @@
+/**
+ * Variables for SASS
+ *
+ * Note that I am not using too many global things like this. The theme is pretty
+ * Simple by design so there isn't much to keep track of
+ */
+
+/**
+ * Colors
+ */
+
+$backgroundColor: white;
+$textColor: black;
+
+// Numbered Schemes
+
+$visited: purple;
+
+$accent-colors:
+	royalblue,
+	#B90239,
+	#347200,
+	#005F90;
+
+$accent-hover-colors:
+	midnightblue,
+	#800025,
+	#144A00,
+	#017C7C;
+
+@for $i from 1 through length($accent-colors) {
+	.color-palette-#{$i}{
+		a {
+			color: nth($accent-colors, $i);
+		}
+
+		a:hover,
+		a:focus,
+		a:active {
+			color: nth($accent-hover-colors, $i);
+		}
+
+		.site-header,
+		.site-logo {
+			box-shadow: 0 0 1em .25em nth($accent-colors, $i);
+		}
+	}
+}
+
+a:visited {
+	color: $visited;
+}

@@ -20,15 +20,6 @@ to build a underscores-based react theme.
    also by Automattic
 */
 /**
- * Variables for SASS
- *
- * Note that I am not using too many global things like this. The theme is pretty
- * Simple by design so there isn't much to keep track of
- */
-/**
- * Colors
- */
-/**
  * Loosely based on the default _s normalization CSS which are in turn based
  * off of normalize.css: http://necolas.github.com/normalize.css/
  */
@@ -432,20 +423,69 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
+/**
+ * Variables for SASS
+ *
+ * Note that I am not using too many global things like this. The theme is pretty
+ * Simple by design so there isn't much to keep track of
+ */
+/**
+ * Colors
+ */
+.color-palette-1 a {
+  color: royalblue; }
+
+.color-palette-1 a:hover,
+.color-palette-1 a:focus,
+.color-palette-1 a:active {
+  color: midnightblue; }
+
+.color-palette-1 .site-header,
+.color-palette-1 .site-logo {
+  box-shadow: 0 0 1em 0.25em royalblue; }
+
+.color-palette-2 a {
+  color: #B90239; }
+
+.color-palette-2 a:hover,
+.color-palette-2 a:focus,
+.color-palette-2 a:active {
+  color: #800025; }
+
+.color-palette-2 .site-header,
+.color-palette-2 .site-logo {
+  box-shadow: 0 0 1em 0.25em #B90239; }
+
+.color-palette-3 a {
+  color: #347200; }
+
+.color-palette-3 a:hover,
+.color-palette-3 a:focus,
+.color-palette-3 a:active {
+  color: #144A00; }
+
+.color-palette-3 .site-header,
+.color-palette-3 .site-logo {
+  box-shadow: 0 0 1em 0.25em #347200; }
+
+.color-palette-4 a {
+  color: #005F90; }
+
+.color-palette-4 a:hover,
+.color-palette-4 a:focus,
+.color-palette-4 a:active {
+  color: #017C7C; }
+
+.color-palette-4 .site-header,
+.color-palette-4 .site-logo {
+  box-shadow: 0 0 1em 0.25em #005F90; }
+
+a:visited {
+  color: purple; }
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-a {
-  color: #00008B; }
-
-a:visited {
-  color: #8B0000; }
-
-a:hover,
-a:focus,
-a:active {
-  color: black; }
-
 a:focus {
   outline: thin dotted; }
 
@@ -500,8 +540,7 @@ Header Layouts
   margin: 2em 0;
   height: 4em;
   background-color: black;
-  color: white;
-  box-shadow: 0 0 1em 0.25em #00008B; }
+  color: white; }
 
 /*Creates the header bar-effect*/
 .site-header:before {
@@ -519,8 +558,7 @@ Header Layouts
   left: 10%;
   background-color: white;
   border-radius: 3em;
-  overflow: hidden;
-  box-shadow: 0 0 1em 0.25em #00008B; }
+  overflow: hidden; }
 
 .site-logo img {
   line-height: 6em; }

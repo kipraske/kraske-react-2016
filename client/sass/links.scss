@@ -1,20 +1,6 @@
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-a {
-	color: $accentColor;
-}
-
-a:visited {
-	color: $antiAccentColor;
-}
-
-a:hover,
-a:focus,
-a:active {
-	color: black;
-}
-
 a:focus {
 	outline: thin dotted;
 }

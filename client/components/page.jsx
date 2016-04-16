@@ -7,7 +7,24 @@ var Single = require('./content/single.jsx');
 var None = require('./content/none.jsx');
 var Footer = require('./footer.jsx');
 
+/**
+ * Main Page Component
+ *
+ * Also controls the fancy color toggle on page elements
+ */
 class Page extends React.Component {
+
+	constructor(props){
+		super(props);
+		this.state = {
+			colorScheme: 1
+		}
+	}
+
+	// Fancy Colors Stuff
+	static getRandColorScheme(){
+
+	}
 
 	render(){
 		var numberOfPosts = this.props.posts.length;

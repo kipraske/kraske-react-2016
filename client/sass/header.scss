@@ -13,7 +13,6 @@ Header Layouts
   height: 4em;
   background-color: black;
   color: white;
-  box-shadow: 0 0 1em .25em $accentColor;
 }
 
 /*Creates the header bar-effect*/
@@ -34,7 +33,6 @@ Header Layouts
   background-color: white;
   border-radius: 3em;
   overflow:hidden;
-  box-shadow: 0 0 1em .25em $accentColor;
 }
 
 .site-logo img{
