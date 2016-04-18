@@ -6,5 +6,6 @@ var React = require( 'react' );
 var ReactDOM = require('react-dom');
 var Router = require( './router.jsx' );
 
-var reactRoot = document.getElementById( 'app-root' )
-ReactDOM.render(<Router initialPage={reactRoot.innerHTML} />, reactRoot);
+var reactRoot = document.getElementById( 'app-root' );
+var pageRoot = document.getElementById( 'page' );
+ReactDOM.render(<Router initialPage={page.innerHTML} />, reactRoot);

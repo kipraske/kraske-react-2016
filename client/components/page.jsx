@@ -29,13 +29,35 @@ class Page extends React.Component {
 		return 'color-palette-' + randInt;
 	}
 
-	componentWillReceiveProps(){
-		let newPalette = this.getRandomPaletteClass();
-		this.setState({colorPalette: newPalette});
+	postPaintUpdatePaletteClass(){
+		var newPalette = this.getRandomPaletteClass();
+		var pageContainer = this.refs.pageContainer;
+		var colorPaletteRegex = /color-palette-\d/;
+		var newClassList;
+		if (!colorPaletteRegex.test(pageContainer.className)) {
+			newClassList = pageContainer.className + ' ' + newPalette;
+		} else {
+			newClassList = pageContainer.className.replace(/color-palette-\d/, newPalette);
+		}
+		pageContainer.className = newClassList;
+	}
+
+	componentDidMount(){
+		//this.postPaintUpdatePaletteClass();
+	}
+
+	componentWillUpdate(){
+		this.postPaintUpdatePaletteClass();
 	}
 
 	render(){
 
+		// If we passed in intial page html instead of a post object render
+		// that instead of the "real" react app
+		if (typeof this.props.posts === 'undefined' && this.props.initialPage){
+			var intialPageHTML = {__html: this.props.initialPage};
+			return <div id="page" ref="pageContainer" dangerouslySetInnerHTML={intialPageHTML} />
+		}
 
 		var numberOfPosts = this.props.posts.length;
 		var contentElement;
@@ -52,7 +74,7 @@ class Page extends React.Component {
 		}
 
 		return (
-			<div id="page" className={this.state.colorPalette}>
+			<div id="page" ref="pageContainer">
 				<HeaderSkipLink />
 				<Header />
 				<div id="content" className="site-content">

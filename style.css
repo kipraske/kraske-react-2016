@@ -483,6 +483,13 @@ textarea {
 a:visited {
   color: purple; }
 
+a {
+  transition: color 1s; }
+
+.site-header,
+.site-logo {
+  transition: box-shadow 1s; }
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/

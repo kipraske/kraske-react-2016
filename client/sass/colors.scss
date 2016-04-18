@@ -28,6 +28,7 @@ $accent-dark-colors:
 	#144A00,
 	#004F80;
 
+// Palette Dependent Colors
 @for $i from 1 through length($accent-colors) {
 	.color-palette-#{$i}{
 		a {
@@ -47,6 +48,17 @@ $accent-dark-colors:
 	}
 }
 
+// Palette Independent Colors
 a:visited {
 	color: $visited;
+}
+
+// Transitions
+a {
+	transition: color 1s;
+}
+
+.site-header,
+.site-logo {
+	transition: box-shadow 1s;
 }

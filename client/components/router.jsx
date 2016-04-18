@@ -17,9 +17,6 @@ class Router extends React.Component {
 		super(props);
     this.state = {
 			hasServerData: false,
-			initialPageMarkup: {
-				__html: this.props.initialPage
-			},
 			posts: []
 		}
 	}
@@ -60,7 +57,7 @@ class Router extends React.Component {
 		if (this.state.hasServerData) {
 			return <Page posts={this.state.posts} />
 		} else {
-			return <div dangerouslySetInnerHTML={this.state.initialPageMarkup} />
+			return <Page initialPage={this.props.initialPage} />
 		}
 	}
 
