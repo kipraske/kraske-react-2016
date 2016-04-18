@@ -54,9 +54,9 @@ class Page extends React.Component {
 
 		// If we passed in intial page html instead of a post object render
 		// that instead of the "real" react app
-		if (typeof this.props.posts === 'undefined' && this.props.initialPage){
+		if (!this.props.hasServerData){
 			var intialPageHTML = {__html: this.props.initialPage};
-			return <div id="page" ref="pageContainer" className={this.props.pageClass} dangerouslySetInnerHTML={intialPageHTML} />
+			return <div id="page" ref="pageContainer" className={this.props.initialPageClass} dangerouslySetInnerHTML={intialPageHTML} />
 		}
 
 		// This is the normal post-renderer react apps

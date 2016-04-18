@@ -55,13 +55,14 @@ class Router extends React.Component {
 	}
 
 	render() {
-		if (this.state.hasServerData) {
-			return <Page posts={this.state.posts} pageClass={this.state.bodyClass}/>
-		} else {
-			return <Page initialPage={this.props.initialPage} pageClass={this.props.initialBodyClass}/>
+			return (
+				<Page posts={this.state.posts}
+					pageClass={this.state.bodyClass}
+					hasServerData={this.state.hasServerData}
+					initialPage={this.props.initialPage}
+					initialPageClass={this.props.initialBodyClass}/>
+			);
 		}
-	}
-
 }
 
 module.exports = Router;
