@@ -256,6 +256,16 @@ table {
   width: 100%; }
 
 /*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a:focus {
+  outline: thin dotted; }
+
+a:hover,
+a:active {
+  outline: 0; }
+
+/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 body,
@@ -444,6 +454,9 @@ textarea {
 .color-palette-1 .site-logo {
   box-shadow: 0 0 1em 0.25em midnightblue; }
 
+.color-palette-1 .site-logo {
+  border: solid 1px midnightblue; }
+
 .color-palette-2 a {
   color: #B90239; }
 
@@ -455,6 +468,9 @@ textarea {
 .color-palette-2 .site-header,
 .color-palette-2 .site-logo {
   box-shadow: 0 0 1em 0.25em #800025; }
+
+.color-palette-2 .site-logo {
+  border: solid 1px #800025; }
 
 .color-palette-3 a {
   color: #347200; }
@@ -468,6 +484,9 @@ textarea {
 .color-palette-3 .site-logo {
   box-shadow: 0 0 1em 0.25em #144A00; }
 
+.color-palette-3 .site-logo {
+  border: solid 1px #144A00; }
+
 .color-palette-4 a {
   color: #006C6C; }
 
@@ -479,6 +498,9 @@ textarea {
 .color-palette-4 .site-header,
 .color-palette-4 .site-logo {
   box-shadow: 0 0 1em 0.25em #004F80; }
+
+.color-palette-4 .site-logo {
+  border: solid 1px #004F80; }
 
 a:visited {
   color: purple; }
@@ -497,16 +519,6 @@ a {
 .color-palette-transition .site-header,
 .color-palette-transition .site-logo {
   transition: none; }
-
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a:focus {
-  outline: thin dotted; }
-
-a:hover,
-a:active {
-  outline: 0; }
 
 /*--------------------------------------------------------------
 # Accessibility

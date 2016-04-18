@@ -77,13 +77,9 @@ class Page extends React.Component {
 			<div id="page" ref="pageContainer" className={this.state.pageClass}>
 				<HeaderSkipLink />
 				<Header />
-				<div id="content" className="site-content">
-					<div id="primary" className="content-area">
-						<main id="main" className="site-main" role="main">
-						{contentElement}
-						</main>
-					</div>
-				</div>
+				<main id="content" className="site-content">
+					{contentElement}
+				</main>
 				<Footer />
 			</div>
 		);

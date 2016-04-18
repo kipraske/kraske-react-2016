@@ -14,32 +14,30 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div id="content" class="site-content">
 
-		<?php
-		if ( have_posts() ) :
+<?php
+if ( have_posts() ) :
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-				if ( is_singular() ){
-					// Pages and posts use the same "single" template
-					get_template_part( 'server/template-parts/content/single');
-				} else {
-					get_template_part( 'server/template-parts/content/rollup');
-				}
-			endwhile;
+	/* Start the Loop */
+	while ( have_posts() ) : the_post();
+		if ( is_singular() ){
+			// Pages and posts use the same "single" template
+			get_template_part( 'server/template-parts/content/single');
+		} else {
+			get_template_part( 'server/template-parts/content/rollup');
+		}
+	endwhile;
 
-			the_posts_navigation();
+	the_posts_navigation();
 
-		else :
+else :
 
-			get_template_part( 'template-parts/content', 'none' );
+	get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+</div><!-- #content -->
 
 <?php
 get_footer();

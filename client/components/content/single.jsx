@@ -1,22 +1,22 @@
 var React = require('react');
-var Entry = {
-	Header : require('./entry/header.jsx'),
-	Footer : require('./entry/footer.jsx'),
-}
 
 const Single = (props) => {
 	var contentHTML = {__html: props.post.content};
+	var postedOn;
+	if (props.post.post_type === 'post'){
+		var postedOnHTML = {__html: props.post.template_tags.posted_on};
+		postedOn = (
+			<div className="entry-meta" dangerouslySetInnerHTML={postedOnHTML} ></div>
+		)
+	}
+
 	return (
 		<article id={props.post.id} className={props.post.css_class}>
-			<Entry.Header
-				title={props.post.title}
-				permalink={props.post.permalink}
-				meta={props.post.template_tags.posted_on}
-				post_type={props.post.post_type}/>
-
+			<header classNAme="entry-header">
+				<h1 className="entry-title">{props.post.title}</h1>
+				{postedOn}
+			</header>
 			<div className="entry-content" dangerouslySetInnerHTML={contentHTML}></div>
-
-			<Entry.Footer />
 		</article>
 	);
 }

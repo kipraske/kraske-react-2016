@@ -11,8 +11,6 @@
 
 ?>
 
-		</div><!-- #content -->
-
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="site-info">
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'kraske-react-2016' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'kraske-react-2016' ), 'WordPress' ); ?></a>

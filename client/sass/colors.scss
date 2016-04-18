@@ -45,6 +45,10 @@ $accent-dark-colors:
 		.site-logo {
 			box-shadow: 0 0 1em .25em nth($accent-dark-colors, $i);
 		}
+
+		.site-logo {
+			border: solid 1px nth($accent-dark-colors, $i);
+		}
 	}
 }
 
