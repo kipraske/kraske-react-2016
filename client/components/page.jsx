@@ -22,48 +22,31 @@ class Page extends React.Component {
 		}
 	}
 
-	// Update Random Color Scheme
-	getRandomPaletteClass(){
-		const minPalette = 1;
-		const maxPalette = 4;
-		let randInt = Math.floor(Math.random() * (maxPalette - minPalette + 1) + minPalette);
-		return 'color-palette-' + randInt;
-	}
-
-	postPaintUpdatePaletteClass(){
-		var newPalette = this.getRandomPaletteClass();
-		var pageContainer = this.refs.pageContainer;
-		var colorPaletteRegex = /color-palette-\d/;
-		var newClassList;
-		newClassList = pageContainer.className.replace(/color-palette-\d/, '');
-		pageContainer.className = newClassList;
-	}
-
 	componentWillReceiveProps(nextProps){
 		var pageClass = nextProps.pageClass;
-		var colorPaletteRegex = /color-palette-\d/;
-		var colorPaletteRegexGlobal = /\s?color-palette-\d/g;
-		var newPaletteClass = pageClass.match(colorPaletteRegex)[0];
-		var newClassList = pageClass.replace(colorPaletteRegexGlobal, '');
+		var newPaletteClass = pageClass.match(/color-palette-\d/)[0];
+		var newClassList = pageClass.replace(/\s?color-palette-\d/g, '');
 		this.setState({colorPalette: newPaletteClass});
 		this.setState({pageClass: newClassList});
 	}
 
-	componentDidMount(){
-		//this.postPaintUpdatePaletteClass();
-	}
-
 	componentDidUpdate(){
+		// Using request animation Frame to ensure that each function is painted
+		// before the next function begins to fire
 		window.requestAnimationFrame( () => {
-			var pageContainer = this.refs.pageContainer;
-			pageContainer.className = this.state.pageClass + ' ' + 'color-palette-transition';
+			this.clearPalette();
 			window.requestAnimationFrame( () => {
-				var pageContainer = this.refs.pageContainer;
-				pageContainer.className = this.state.pageClass + ' ' + this.state.colorPalette;
+				this.applyPalette();
 			});
 		});
+	}
 
+	clearPalette(){
+		this.refs.pageContainer.className = this.state.pageClass + ' ' + 'color-palette-transition';
+	}
 
+	applyPalette(){
+		this.refs.pageContainer.className = this.state.pageClass + ' ' + this.state.colorPalette;
 	}
 
 	render(){
@@ -91,7 +74,7 @@ class Page extends React.Component {
 		}
 
 		return (
-			<div id="page" ref="pageContainer" className={this.state.pageClass} data-test-pallette={this.state.colorPalette}>
+			<div id="page" ref="pageContainer" className={this.state.pageClass}>
 				<HeaderSkipLink />
 				<Header />
 				<div id="content" className="site-content">
