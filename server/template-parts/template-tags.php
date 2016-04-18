@@ -3,6 +3,8 @@
  * Custom template tags for this theme because we need to be able to send these
  * via JSON we need to ensure that these return the HTML instead of echoing them
  *
+ * So these also are normal template tags that I will need returned instead of echoed.
+ *
  * @package Kraske-react-2016
  */
 
@@ -38,6 +40,12 @@ function kraske_react_2016_posted_on() {
 }
 endif;
 
-if ( ! function_exists( 'kraske_react_2016_entry_footer' ) ) :
-
-endif;
+/**
+ * Returns the results of body_class() rather than echoing it
+ *
+ * @param $class is the param of body_class
+ */
+function kraske_react_2016_body_class_str($class){
+	$body_classes = get_body_class($class);
+	return implode(' ', $body_classes);
+}

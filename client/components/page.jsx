@@ -43,11 +43,11 @@ class Page extends React.Component {
 	}
 
 	componentDidMount(){
-		this.postPaintUpdatePaletteClass();
+		//this.postPaintUpdatePaletteClass();
 	}
 
 	componentWillUpdate(){
-		this.postPaintUpdatePaletteClass();
+		//this.postPaintUpdatePaletteClass();
 	}
 
 	render(){

@@ -39,12 +39,13 @@ class Router extends React.Component {
 						console.error(err);
 						return;
 					}
-					var returnPosts = JSON.parse(res.text);
+					var data = JSON.parse(res.text);
 					self.setState({
 						hasServerData: true,
-						posts: returnPosts
+						posts: data.posts,
+						bodyClass: data.body_class
 					});
-					console.log(returnPosts);
+					console.log(data);
 				});
 		});
 
@@ -55,7 +56,7 @@ class Router extends React.Component {
 
 	render() {
 		if (this.state.hasServerData) {
-			return <Page posts={this.state.posts} />
+			return <Page posts={this.state.posts} pageClass={this.state.bodyClass}/>
 		} else {
 			return <Page initialPage={this.props.initialPage} pageClass={this.props.initialBodyClass}/>
 		}
