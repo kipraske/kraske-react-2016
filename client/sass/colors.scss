@@ -55,10 +55,24 @@ a:visited {
 
 // Transitions
 a {
-	transition: color 1s;
+	transition: color 0.5s;
 }
 
 .site-header,
 .site-logo {
-	transition: box-shadow 1s;
+	transition: box-shadow 0.5s;
+}
+
+// Transition Through Palette
+
+.color-palette-transition{
+	a {
+		color: black;
+		transition: none;
+	}
+
+	.site-header,
+	.site-logo {
+		transition: none;
+	}
 }

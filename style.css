@@ -484,11 +484,19 @@ a:visited {
   color: purple; }
 
 a {
-  transition: color 1s; }
+  transition: color 0.5s; }
 
 .site-header,
 .site-logo {
-  transition: box-shadow 1s; }
+  transition: box-shadow 0.5s; }
+
+.color-palette-transition a {
+  color: black;
+  transition: none; }
+
+.color-palette-transition .site-header,
+.color-palette-transition .site-logo {
+  transition: none; }
 
 /*--------------------------------------------------------------
 ## Links

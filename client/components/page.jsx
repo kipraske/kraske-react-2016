@@ -56,8 +56,14 @@ class Page extends React.Component {
 	componentDidUpdate(){
 		window.requestAnimationFrame( () => {
 			var pageContainer = this.refs.pageContainer;
-			pageContainer.className = this.state.pageClass + ' ' + this.state.colorPalette;
+			pageContainer.className = this.state.pageClass + ' ' + 'color-palette-transition';
+			window.requestAnimationFrame( () => {
+				var pageContainer = this.refs.pageContainer;
+				pageContainer.className = this.state.pageClass + ' ' + this.state.colorPalette;
+			});
 		});
+
+
 	}
 
 	render(){
