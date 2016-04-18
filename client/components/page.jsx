@@ -43,7 +43,7 @@ class Page extends React.Component {
 	}
 
 	componentDidMount(){
-		//this.postPaintUpdatePaletteClass();
+		this.postPaintUpdatePaletteClass();
 	}
 
 	componentWillUpdate(){
@@ -56,9 +56,10 @@ class Page extends React.Component {
 		// that instead of the "real" react app
 		if (typeof this.props.posts === 'undefined' && this.props.initialPage){
 			var intialPageHTML = {__html: this.props.initialPage};
-			return <div id="page" ref="pageContainer" dangerouslySetInnerHTML={intialPageHTML} />
+			return <div id="page" ref="pageContainer" className={this.props.pageClass} dangerouslySetInnerHTML={intialPageHTML} />
 		}
 
+		// This is the normal post-renderer react apps
 		var numberOfPosts = this.props.posts.length;
 		var contentElement;
 		if (numberOfPosts > 1) {
@@ -74,7 +75,7 @@ class Page extends React.Component {
 		}
 
 		return (
-			<div id="page" ref="pageContainer">
+			<div id="page" ref="pageContainer" className={this.props.pageClass}>
 				<HeaderSkipLink />
 				<Header />
 				<div id="content" className="site-content">

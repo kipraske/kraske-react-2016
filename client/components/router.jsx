@@ -57,7 +57,7 @@ class Router extends React.Component {
 		if (this.state.hasServerData) {
 			return <Page posts={this.state.posts} />
 		} else {
-			return <Page initialPage={this.props.initialPage} />
+			return <Page initialPage={this.props.initialPage} pageClass={this.props.initialBodyClass}/>
 		}
 	}
 

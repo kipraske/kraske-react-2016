@@ -8,4 +8,4 @@ var Router = require( './router.jsx' );
 
 var reactRoot = document.getElementById( 'app-root' );
 var pageRoot = document.getElementById( 'page' );
-ReactDOM.render(<Router initialPage={page.innerHTML} />, reactRoot);
+ReactDOM.render(<Router initialPage={pageRoot.innerHTML} initialBodyClass={pageRoot.className}/>, reactRoot);
