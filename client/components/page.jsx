@@ -17,7 +17,8 @@ class Page extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			colorPalette: 'color-palette-1'
+			colorPalette: 'color-palette-1',
+			pageClass: ''
 		}
 	}
 
@@ -34,20 +35,29 @@ class Page extends React.Component {
 		var pageContainer = this.refs.pageContainer;
 		var colorPaletteRegex = /color-palette-\d/;
 		var newClassList;
-		if (!colorPaletteRegex.test(pageContainer.className)) {
-			newClassList = pageContainer.className + ' ' + newPalette;
-		} else {
-			newClassList = pageContainer.className.replace(/color-palette-\d/, newPalette);
-		}
+		newClassList = pageContainer.className.replace(/color-palette-\d/, '');
 		pageContainer.className = newClassList;
+	}
+
+	componentWillReceiveProps(nextProps){
+		var pageClass = nextProps.pageClass;
+		var colorPaletteRegex = /color-palette-\d/;
+		var colorPaletteRegexGlobal = /\s?color-palette-\d/g;
+		var newPaletteClass = pageClass.match(colorPaletteRegex)[0];
+		var newClassList = pageClass.replace(colorPaletteRegexGlobal, '');
+		this.setState({colorPalette: newPaletteClass});
+		this.setState({pageClass: newClassList});
 	}
 
 	componentDidMount(){
 		//this.postPaintUpdatePaletteClass();
 	}
 
-	componentWillUpdate(){
-		//this.postPaintUpdatePaletteClass();
+	componentDidUpdate(){
+		window.requestAnimationFrame( () => {
+			var pageContainer = this.refs.pageContainer;
+			pageContainer.className = this.state.pageClass + ' ' + this.state.colorPalette;
+		});
 	}
 
 	render(){
@@ -75,7 +85,7 @@ class Page extends React.Component {
 		}
 
 		return (
-			<div id="page" ref="pageContainer" className={this.props.pageClass}>
+			<div id="page" ref="pageContainer" className={this.state.pageClass} data-test-pallette={this.state.colorPalette}>
 				<HeaderSkipLink />
 				<Header />
 				<div id="content" className="site-content">
