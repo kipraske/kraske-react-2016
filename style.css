@@ -78,7 +78,7 @@ dfn {
   font-style: italic; }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin: 0.67em 0; }
 
 mark {
@@ -666,25 +666,15 @@ Primary Menu
   width: 50%; }
 
 /**
- * Stuff for the post-content things. This includes both single and post things
- */
-.byline,
-.updated:not(.published) {
-  display: none; }
-
-.single .byline,
-.group-blog .byline {
-  display: inline; }
-
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0; }
-
+* Stuff for the post-content things. This includes both single and post things
+*/
 .singular .entry-header {
   text-align: center;
-  margin: 6em auto 0 auto;
-  max-width: 320px; }
+  margin: 6em auto 3em auto;
+  max-width: 640px; }
+  .singular .entry-header h1 {
+    margin-bottom: 0;
+    line-height: 1em; }
 
 /*
 TODO - this probably should be split apart into the more specific CSS thigns

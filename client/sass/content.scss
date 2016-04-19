@@ -1,27 +1,16 @@
 /**
- * Stuff for the post-content things. This includes both single and post things
- */
-
-.byline,
-.updated:not(.published) {
-	display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
+* Stuff for the post-content things. This includes both single and post things
+*/
 
 .singular {
 	.entry-header {
 		text-align: center;
-		margin: 6em auto 0 auto;
-		max-width: 320px;
+		margin: 6em auto 3em auto;
+		max-width: 640px;
+
+		h1 {
+			margin-bottom: 0;
+			line-height: 1em;
+		}
 	}
 }
