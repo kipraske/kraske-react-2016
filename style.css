@@ -556,14 +556,14 @@ Header Layouts
 .site-header {
   position: relative;
   margin: 2em 0;
-  height: 4em;
+  height: 3em;
   background-color: black;
   color: white; }
 
 /*Creates the header bar-effect*/
 .site-header:before {
   position: absolute;
-  height: 3.5em;
+  height: 2.5em;
   width: 100%;
   top: 0.25em;
   border-top: solid 1px white;
@@ -572,17 +572,19 @@ Header Layouts
 .site-logo {
   position: fixed;
   top: 1em;
-  width: 6em;
+  width: 5em;
   left: 10%;
   background-color: white;
-  border-radius: 3em;
+  border-radius: 2.5em;
   overflow: hidden; }
 
 .admin-bar .site-logo {
   top: calc(1em + 32px); }
 
 .site-logo img {
-  line-height: 6em; }
+  display: block;
+  position: relative;
+  top: 2px; }
 
 /*
 Primary Menu
@@ -596,7 +598,7 @@ Primary Menu
   vertical-align: top;
   display: inline-block;
   position: relative;
-  line-height: 4em; }
+  line-height: 3em; }
 
 .main-navigation ul {
   display: none;
@@ -670,8 +672,11 @@ Primary Menu
 */
 .singular .entry-header {
   text-align: center;
-  margin: 6em auto 3em auto;
+  margin: 5em auto 3em auto;
   max-width: 640px; }
+  .singular .entry-header .post-category,
+  .singular .entry-header .entry-meta {
+    font-style: italic; }
   .singular .entry-header h1 {
     margin-bottom: 0;
     line-height: 1em; }

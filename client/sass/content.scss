@@ -5,8 +5,13 @@
 .singular {
 	.entry-header {
 		text-align: center;
-		margin: 6em auto 3em auto;
+		margin: 5em auto 3em auto;
 		max-width: 640px;
+
+		.post-category,
+		.entry-meta{
+			font-style: italic;
+		}
 
 		h1 {
 			margin-bottom: 0;

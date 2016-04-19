@@ -13,13 +13,11 @@ if ( ! function_exists( 'kraske_react_2016_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function kraske_react_2016_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	$time_string = '<time class="entry-date published updated" datetime="%s">%s</time>';
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
+		esc_html( get_the_date() )
 	);
 
 	return '<span class="posted-on">' . $time_string . '</span>';
