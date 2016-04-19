@@ -587,6 +587,9 @@ Header Layouts
   border-radius: 3em;
   overflow: hidden; }
 
+.admin-bar .site-logo {
+  top: calc(1em + 32px); }
+
 .site-logo img {
   line-height: 6em; }
 

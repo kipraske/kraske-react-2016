@@ -39,7 +39,15 @@ class Router extends React.Component {
 						console.error(err);
 						return;
 					}
-					var data = JSON.parse(res.text);
+
+					try {
+						var data = JSON.parse(res.text);
+					} catch(ex) {
+						urlRouter.stop();
+						window.location.href = ctx.canonicalPath;
+						return;
+					}
+
 					self.setState({
 						hasServerData: true,
 						posts: data.posts,
