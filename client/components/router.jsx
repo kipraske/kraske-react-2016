@@ -58,6 +58,7 @@ class Router extends React.Component {
 		});
 
 		urlRouter({
+			// Prevents triggering routing on the initial page load
 			dispatch: false
 		});
 	}
