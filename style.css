@@ -681,6 +681,14 @@ Primary Menu
     margin-bottom: 0;
     line-height: 1em; }
 
+.singular .entry-content {
+  max-width: 640px;
+  margin: 0 auto; }
+  .singular .entry-content p:first-child:first-letter {
+    font-size: 4em;
+    float: left;
+    line-height: 0.7em; }
+
 /*
 TODO - this probably should be split apart into the more specific CSS thigns
  */

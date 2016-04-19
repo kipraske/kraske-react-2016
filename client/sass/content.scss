@@ -18,4 +18,15 @@
 			line-height: 1em;
 		}
 	}
+
+	.entry-content{
+		max-width: 640px;
+		margin: 0 auto;
+
+		p:first-child:first-letter{
+			font-size: 4em;
+	    float: left;
+	    line-height: 0.7em;
+		}
+	}
 }
