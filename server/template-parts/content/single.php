@@ -12,6 +12,7 @@
 	<header class="entry-header">
 		<?php
 		the_title( '<h1 class="entry-title">', '</h1>' );
+		echo kraske_react_2016_category_list();
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php echo kraske_react_2016_posted_on(); ?>

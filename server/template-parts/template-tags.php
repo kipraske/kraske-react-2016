@@ -41,6 +41,24 @@ function kraske_react_2016_posted_on() {
 endif;
 
 /**
+ * Returns a formatted category list. A story of...
+ *
+ * @param $class is the param of body_class
+ */
+function kraske_react_2016_category_list(){
+	$categories = get_categories();
+	$category_link_list = array();
+	foreach ($categories as $category){
+		$category_name = $category->name;
+		$category_link = get_category_link( $category->term_id );
+		$category_link_list[] = "<a href='$category_link'>$category_name</a>";
+	}
+	$link_list_text = implode(' & ', $category_link_list);
+
+	return "<div class='post-category'> A story about $link_list_text...</div>";
+}
+
+/**
  * Returns the results of body_class() rather than echoing it
  *
  * @param $class is the param of body_class

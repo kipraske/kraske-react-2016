@@ -674,12 +674,6 @@ Primary Menu
 /**
  * Stuff for the post-content things. This includes both single and post things
  */
-.sticky {
-  display: block; }
-
-.hentry {
-  margin: 0 0 1.5em; }
-
 .byline,
 .updated:not(.published) {
   display: none; }
@@ -693,9 +687,10 @@ Primary Menu
 .entry-summary {
   margin: 1.5em 0 0; }
 
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em; }
+.singular .entry-header {
+  text-align: center;
+  margin: 6em auto 0 auto;
+  max-width: 320px; }
 
 /*
 TODO - this probably should be split apart into the more specific CSS thigns

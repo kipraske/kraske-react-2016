@@ -24,7 +24,7 @@
 <body>
 <div id="app-root">
 	<div id="page" <?php body_class(array('site')) ?> >
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'kraske-react-2016' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'kraske-react-2016' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-logo">
