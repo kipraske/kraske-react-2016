@@ -6,7 +6,7 @@
 	.entry-header {
 		text-align: center;
 		margin: 5em auto 3em auto;
-		max-width: 640px;
+		max-width: $contentWidth;
 
 		.post-category,
 		.entry-meta{
@@ -20,7 +20,7 @@
 	}
 
 	.entry-content{
-		max-width: 640px;
+		max-width: $contentWidth;
 		margin: 0 auto;
 
 		p:first-child:first-letter{

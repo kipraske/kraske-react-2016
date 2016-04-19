@@ -13,9 +13,11 @@
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'kraske-react-2016' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'kraske-react-2016' ), 'WordPress' ); ?></a>
-				<span class="sep"> | </span>
-				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'kraske-react-2016' ), 'kraske-react-2016', '<a href="http://underscores.me/" rel="designer">Me</a>' ); ?>
+				<?php
+					$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org/', 'kraske-react-2016' ) ) . '"> Wordpress </a>';
+					$react_link = '<a href="' . esc_url( __( 'https://facebook.github.io/react/', 'kraske-react-2016' ) ) . '"> React.js </a>';
+					printf( __("Copyright © Kristofer Raske 2016. Powered by %s and %s"), $wordpress_link, $react_link);
+				?>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div><!-- #page -->

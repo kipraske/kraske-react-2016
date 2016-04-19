@@ -1,6 +1,12 @@
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+
+.comments-area{
+	max-width: $contentWidth;
+	margin: 0 auto;
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }

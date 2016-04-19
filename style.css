@@ -325,6 +325,152 @@ ins {
 big {
   font-size: 125%; }
 
+/**
+ * Layout Related Variables
+ */
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em; }
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  content: "";
+  display: table;
+  table-layout: fixed; }
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both; }
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+  margin: 0 0 1.5em; }
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+  max-width: 100%; }
+
+/**
+ * Variables for SASS
+ *
+ * Note that I am not using too many global things like this. The theme is pretty
+ * Simple by design so there isn't much to keep track of
+ */
+/**
+ * Colors
+ */
+.color-palette-1 a {
+  color: royalblue; }
+
+.color-palette-1 a:hover,
+.color-palette-1 a:focus,
+.color-palette-1 a:active {
+  color: midnightblue; }
+
+.color-palette-1 .site-header,
+.color-palette-1 .site-logo {
+  box-shadow: 0 0 1em 0.25em midnightblue; }
+
+.color-palette-1 .site-logo {
+  border: solid 1px midnightblue; }
+
+.color-palette-2 a {
+  color: #B90239; }
+
+.color-palette-2 a:hover,
+.color-palette-2 a:focus,
+.color-palette-2 a:active {
+  color: #800025; }
+
+.color-palette-2 .site-header,
+.color-palette-2 .site-logo {
+  box-shadow: 0 0 1em 0.25em #800025; }
+
+.color-palette-2 .site-logo {
+  border: solid 1px #800025; }
+
+.color-palette-3 a {
+  color: #347200; }
+
+.color-palette-3 a:hover,
+.color-palette-3 a:focus,
+.color-palette-3 a:active {
+  color: #144A00; }
+
+.color-palette-3 .site-header,
+.color-palette-3 .site-logo {
+  box-shadow: 0 0 1em 0.25em #144A00; }
+
+.color-palette-3 .site-logo {
+  border: solid 1px #144A00; }
+
+.color-palette-4 a {
+  color: #006C6C; }
+
+.color-palette-4 a:hover,
+.color-palette-4 a:focus,
+.color-palette-4 a:active {
+  color: #004F80; }
+
+.color-palette-4 .site-header,
+.color-palette-4 .site-logo {
+  box-shadow: 0 0 1em 0.25em #004F80; }
+
+.color-palette-4 .site-logo {
+  border: solid 1px #004F80; }
+
+a:visited {
+  color: purple; }
+
+a {
+  transition: color 0.5s; }
+
+.site-header,
+.site-logo {
+  transition: box-shadow 0.5s; }
+
+.color-palette-transition a {
+  color: black;
+  transition: none; }
+
+.color-palette-transition .site-header,
+.color-palette-transition .site-logo {
+  transition: none; }
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -423,93 +569,6 @@ input[type="color"] {
 textarea {
   padding-left: 3px;
   width: 100%; }
-
-/**
- * Variables for SASS
- *
- * Note that I am not using too many global things like this. The theme is pretty
- * Simple by design so there isn't much to keep track of
- */
-/**
- * Colors
- */
-.color-palette-1 a {
-  color: royalblue; }
-
-.color-palette-1 a:hover,
-.color-palette-1 a:focus,
-.color-palette-1 a:active {
-  color: midnightblue; }
-
-.color-palette-1 .site-header,
-.color-palette-1 .site-logo {
-  box-shadow: 0 0 1em 0.25em midnightblue; }
-
-.color-palette-1 .site-logo {
-  border: solid 1px midnightblue; }
-
-.color-palette-2 a {
-  color: #B90239; }
-
-.color-palette-2 a:hover,
-.color-palette-2 a:focus,
-.color-palette-2 a:active {
-  color: #800025; }
-
-.color-palette-2 .site-header,
-.color-palette-2 .site-logo {
-  box-shadow: 0 0 1em 0.25em #800025; }
-
-.color-palette-2 .site-logo {
-  border: solid 1px #800025; }
-
-.color-palette-3 a {
-  color: #347200; }
-
-.color-palette-3 a:hover,
-.color-palette-3 a:focus,
-.color-palette-3 a:active {
-  color: #144A00; }
-
-.color-palette-3 .site-header,
-.color-palette-3 .site-logo {
-  box-shadow: 0 0 1em 0.25em #144A00; }
-
-.color-palette-3 .site-logo {
-  border: solid 1px #144A00; }
-
-.color-palette-4 a {
-  color: #006C6C; }
-
-.color-palette-4 a:hover,
-.color-palette-4 a:focus,
-.color-palette-4 a:active {
-  color: #004F80; }
-
-.color-palette-4 .site-header,
-.color-palette-4 .site-logo {
-  box-shadow: 0 0 1em 0.25em #004F80; }
-
-.color-palette-4 .site-logo {
-  border: solid 1px #004F80; }
-
-a:visited {
-  color: purple; }
-
-a {
-  transition: color 0.5s; }
-
-.site-header,
-.site-logo {
-  transition: box-shadow 0.5s; }
-
-.color-palette-transition a {
-  color: black;
-  transition: none; }
-
-.color-palette-transition .site-header,
-.color-palette-transition .site-logo {
-  transition: none; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -689,65 +748,6 @@ Primary Menu
     float: left;
     line-height: 0.7em; }
 
-/*
-TODO - this probably should be split apart into the more specific CSS thigns
- */
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em; }
-
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em; }
-
-.aligncenter {
-  clear: both;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-  content: "";
-  display: table;
-  table-layout: fixed; }
-
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-  clear: both; }
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-.widget {
-  margin: 0 0 1.5em; }
-
-/* Make sure select elements fit in widgets. */
-.widget select {
-  max-width: 100%; }
-
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -825,6 +825,10 @@ object {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+.comments-area {
+  max-width: 640px;
+  margin: 0 auto; }
+
 .comment-content a {
   word-wrap: break-word; }
 
