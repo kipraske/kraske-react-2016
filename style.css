@@ -751,24 +751,64 @@ Primary Menu
 /**
 * Stuff for the post-content things. This includes both single and post things
 */
+.site-content {
+  margin: 0 auto;
+  max-width: 640px; }
+
+.rollup-title {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 0.5em 0; }
+
+.rollup-item .entry-header {
+  position: relative; }
+
+.rollup-item .entry-header:before {
+  content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
+  height: 1.2em;
+  overflow: hidden;
+  position: absolute; }
+
+.rollup-item .entry-title {
+  display: inline;
+  font-size: 1.1em;
+  padding-right: 0.2em;
+  max-width: 60%;
+  position: relative;
+  background-color: white; }
+
+.rollup-item .posted-on {
+  float: right;
+  position: relative;
+  font-style: italic;
+  background-color: white; }
+
+.rollup-item .entry-summary {
+  margin-left: 4em; }
+
+.rollup-item p {
+  margin-top: 0; }
+
 .singular .entry-header {
   text-align: center;
-  margin: 5em auto 3em auto;
-  max-width: 640px; }
+  margin: 5em 0 3em 0; }
   .singular .entry-header .post-category,
-  .singular .entry-header .entry-meta {
+  .singular .entry-header .posted-on {
     font-style: italic; }
   .singular .entry-header h1 {
     margin-bottom: 0;
     line-height: 1em; }
 
-.singular .entry-content {
-  max-width: 640px;
-  margin: 0 auto; }
-  .singular .entry-content p:first-child:first-letter {
-    font-size: 4em;
-    float: left;
-    line-height: 0.7em; }
+.singular .entry-content p:first-child:first-letter {
+  font-size: 4em;
+  float: left;
+  line-height: 0.7em; }
+
+.comment-content a {
+  word-wrap: break-word; }
+
+.bypostauthor {
+  display: block; }
 
 /*--------------------------------------------------------------
 # Media
@@ -842,17 +882,4 @@ object {
   max-width: 11.11%; }
 
 .gallery-caption {
-  display: block; }
-
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
-.comments-area {
-  max-width: 640px;
-  margin: 0 auto; }
-
-.comment-content a {
-  word-wrap: break-word; }
-
-.bypostauthor {
   display: block; }

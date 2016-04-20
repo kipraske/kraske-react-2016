@@ -2,14 +2,69 @@
 * Stuff for the post-content things. This includes both single and post things
 */
 
+.site-content{
+	margin: 0 auto;
+	max-width: $contentWidth;
+}
+
+// Rollup Styles
+.rollup-title{
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0 0 0.5em 0;
+}
+
+.rollup-item {
+	.entry-header{
+		position: relative;
+	}
+
+// Sneaky CSS trick to get those content dots. Make enogh dots to be sure
+// to cover it all up, then cover the rest of them up with the other elements
+	.entry-header:before{
+		content:
+			". . . . . . . . . . . . . . . . . . . . "
+			". . . . . . . . . . . . . . . . . . . . "
+			". . . . . . . . . . . . . . . . . . . . "
+			". . . . . . . . . . . . . . . . . . . . ";
+		height: 1.2em;
+		overflow: hidden;
+		position: absolute;
+	}
+
+	.entry-title{
+		display: inline;
+		font-size: 1.1em;
+		padding-right: 0.2em;
+		max-width: 60%;
+		position: relative;
+		background-color: $backgroundColor;
+	}
+
+	.posted-on {
+		float: right;
+		position: relative;
+		font-style: italic;
+		background-color: $backgroundColor;
+	}
+
+	.entry-summary{
+		margin-left: 4em;
+	}
+
+	p {
+		margin-top: 0;
+	}
+}
+
+// Single Styles - Designed to look like a chapter in a book
 .singular {
 	.entry-header {
 		text-align: center;
-		margin: 5em auto 3em auto;
-		max-width: $contentWidth;
+		margin: 5em 0 3em 0;
 
 		.post-category,
-		.entry-meta{
+		.posted-on{
 			font-style: italic;
 		}
 
@@ -20,13 +75,25 @@
 	}
 
 	.entry-content{
-		max-width: $contentWidth;
-		margin: 0 auto;
-
 		p:first-child:first-letter{
 			font-size: 4em;
 	    float: left;
 	    line-height: 0.7em;
 		}
 	}
+}
+
+// Rollups all look like a menu of some sort
+.blog {
+
+}
+
+
+// Comments
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
 }

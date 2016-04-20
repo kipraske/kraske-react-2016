@@ -15,8 +15,11 @@
 get_header(); ?>
 
 <div id="content" class="site-content">
+<?php if ( ! is_singular() ){ ?>
+	<h1 class="rollup-title"> ~ TODO ~ </h1>
+<?php }
 
-<?php
+
 if ( have_posts() ) :
 
 	/* Start the Loop */
