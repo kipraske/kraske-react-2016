@@ -16,7 +16,7 @@
 				<?php
 					$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org/', 'kraske-react-2016' ) ) . '"> Wordpress </a>';
 					$react_link = '<a href="' . esc_url( __( 'https://facebook.github.io/react/', 'kraske-react-2016' ) ) . '"> React.js </a>';
-					printf( __("Copyright © Kristofer Raske 2016. Powered by %s and %s"), $wordpress_link, $react_link);
+					printf( __("Copyright © Kristofer Raske 2016 S.D.G. Powered by %s and %s"), $wordpress_link, $react_link);
 				?>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->

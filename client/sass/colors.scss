@@ -11,6 +11,7 @@
 
 $backgroundColor: white;
 $textColor: black;
+$footerTextColor: #CCC;
 
 // Numbered Schemes
 
@@ -42,6 +43,7 @@ $accent-dark-colors:
 		}
 
 		.site-header,
+		.site-footer,
 		.site-logo {
 			box-shadow: 0 0 1em .25em nth($accent-dark-colors, $i);
 		}
@@ -52,9 +54,16 @@ $accent-dark-colors:
 	}
 }
 
-// Palette Independent Colors
+// Palette Independent Link Colors
 a:visited {
 	color: $visited;
+}
+
+.site-header a,
+.site-footer a,
+.site-header a:visited,
+.site-footer a:visited, {
+	color:white;
 }
 
 // Transitions
@@ -63,12 +72,12 @@ a {
 }
 
 .site-header,
+.site-footer,
 .site-logo {
 	transition: box-shadow 0.5s;
 }
 
 // Transition Through Palette
-
 .color-palette-transition{
 	a {
 		color: black;
@@ -76,6 +85,7 @@ a {
 	}
 
 	.site-header,
+	.site-footer,
 	.site-logo {
 		transition: none;
 	}
