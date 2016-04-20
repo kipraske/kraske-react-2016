@@ -31,7 +31,7 @@ endif;
  * @param $class is the param of body_class
  */
 function kraske_react_2016_category_list(){
-	$categories = get_categories();
+	$categories = get_the_category();
 	$category_link_list = array();
 	foreach ($categories as $category){
 		$category_name = $category->name;
@@ -41,6 +41,38 @@ function kraske_react_2016_category_list(){
 	$link_list_text = implode(' & ', $category_link_list);
 
 	return "<div class='post-category'> A story about $link_list_text...</div>";
+}
+
+/**
+* One day taxononomies may have meta, but for now let's just hardcode this in there
+*
+* @param $category is the category you want to output this stuff
+*/
+function kraske_react_2016_get_category_icon( $category ){
+	// Note the icon font just uses another font for the old unicode symbols
+	// so to keep the same size use the newer unicode blocks (1Fxxx)
+	$unicodeCatMap = array(
+		'uncategorized' => '&#x1F40C', // it's a snail
+		'harmonica'     => '&#x1F3B6',
+		'ukulele'       => '&#x1F3B6',
+		'flute'         => '&#x1F3B6',
+		'web-dev'       => '&#x1F4BB',
+		'excercise'     => '&#x1F3CB',
+		'board-games'   => '&#x1F3B2',
+		'video-games'   => '&#x1F3AE',
+	);
+
+	$icon_html_code = $unicodeCatMap[$category->slug];
+	$category_link = get_category_link( $category->term_id );
+
+	ob_start();
+	?>
+	<div class="entry-cat-icon" title="<?php echo $cateogory->name ?>">
+		<a href="<?php echo $category_link ?>"><?php echo $icon_html_code ?></a>
+	</div>
+	<?php
+
+	return ob_get_clean();
 }
 
 /**

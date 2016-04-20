@@ -15,6 +15,9 @@
 }
 
 .rollup-item {
+
+	position: relative;
+
 	.entry-header{
 		position: relative;
 	}
@@ -54,6 +57,14 @@
 
 	p {
 		margin-top: 0;
+	}
+
+	.entry-cat-icon {
+		font-size: 3em;
+		position: absolute;
+		left: 0.4em;
+		line-height: 1em;
+		top: 0.5em;
 	}
 }
 

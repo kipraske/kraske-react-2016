@@ -420,6 +420,9 @@ http://emojisymbols.com/
 .color-palette-1 .site-logo {
   border: solid 1px midnightblue; }
 
+.color-palette-1 .entry-cat-icon {
+  text-shadow: 0 0 0.2em midnightblue; }
+
 .color-palette-2 a {
   color: #B90239; }
 
@@ -435,6 +438,9 @@ http://emojisymbols.com/
 
 .color-palette-2 .site-logo {
   border: solid 1px #800025; }
+
+.color-palette-2 .entry-cat-icon {
+  text-shadow: 0 0 0.2em #800025; }
 
 .color-palette-3 a {
   color: #347200; }
@@ -452,6 +458,9 @@ http://emojisymbols.com/
 .color-palette-3 .site-logo {
   border: solid 1px #144A00; }
 
+.color-palette-3 .entry-cat-icon {
+  text-shadow: 0 0 0.2em #144A00; }
+
 .color-palette-4 a {
   color: #006C6C; }
 
@@ -468,8 +477,15 @@ http://emojisymbols.com/
 .color-palette-4 .site-logo {
   border: solid 1px #004F80; }
 
+.color-palette-4 .entry-cat-icon {
+  text-shadow: 0 0 0.2em #004F80; }
+
 a:visited {
   color: purple; }
+
+.entry-cat-icon a {
+  color: black;
+  text-decoration: none; }
 
 .site-header a,
 .site-footer a,
@@ -650,6 +666,7 @@ textarea {
 
 .site-logo {
   position: fixed;
+  z-index: 10;
   top: 1em;
   width: 5em;
   left: 10%;
@@ -771,34 +788,37 @@ Primary Menu
   text-align: center;
   margin: 0 0 0.5em 0; }
 
-.rollup-item .entry-header {
+.rollup-item {
   position: relative; }
-
-.rollup-item .entry-header:before {
-  content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
-  height: 1.2em;
-  overflow: hidden;
-  position: absolute; }
-
-.rollup-item .entry-title {
-  display: inline;
-  font-size: 1.1em;
-  padding-right: 0.2em;
-  max-width: 60%;
-  position: relative;
-  background-color: white; }
-
-.rollup-item .posted-on {
-  float: right;
-  position: relative;
-  font-style: italic;
-  background-color: white; }
-
-.rollup-item .entry-summary {
-  margin-left: 4em; }
-
-.rollup-item p {
-  margin-top: 0; }
+  .rollup-item .entry-header {
+    position: relative; }
+  .rollup-item .entry-header:before {
+    content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
+    height: 1.2em;
+    overflow: hidden;
+    position: absolute; }
+  .rollup-item .entry-title {
+    display: inline;
+    font-size: 1.1em;
+    padding-right: 0.2em;
+    max-width: 60%;
+    position: relative;
+    background-color: white; }
+  .rollup-item .posted-on {
+    float: right;
+    position: relative;
+    font-style: italic;
+    background-color: white; }
+  .rollup-item .entry-summary {
+    margin-left: 4em; }
+  .rollup-item p {
+    margin-top: 0; }
+  .rollup-item .entry-cat-icon {
+    font-size: 3em;
+    position: absolute;
+    left: 0.4em;
+    line-height: 1em;
+    top: 0.5em; }
 
 .singular .entry-header {
   text-align: center;
