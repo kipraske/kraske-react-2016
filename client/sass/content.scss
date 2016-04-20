@@ -1,5 +1,6 @@
 /**
 * Stuff for the post-content things. This includes both single and post things
+* Since the menu is really its own page too this shares those styles too
 */
 
 .site-content{
@@ -9,13 +10,11 @@
 
 // Rollup Styles
 .rollup-title{
-	text-transform: uppercase;
 	text-align: center;
 	margin: 0 0 0.5em 0;
 }
 
 .rollup-item {
-
 	position: relative;
 
 	.entry-header{
@@ -94,9 +93,33 @@
 	}
 }
 
-// Rollups all look like a menu of some sort
-.blog {
+.main-navigation{
+	position: relative;
 
+	.search-form:before,
+	.menu-item:before {
+		content:
+			". . . . . . . . . . . . . . . . . . . . "
+			". . . . . . . . . . . . . . . . . . . . "
+			". . . . . . . . . . . . . . . . . . . . "
+			". . . . . . . . . . . . . . . . . . . . ";
+		height: 1.2em;
+		overflow: hidden;
+		position: absolute;
+	}
+
+	.search-form label,
+	.menu-item {
+		display: inline;
+		padding-right: 0.2em;
+		position: relative;
+		background-color: $backgroundColor;
+	}
+
+	.search-submit {
+		position: relative;
+		background-color: $backgroundColor;
+	}
 }
 
 
