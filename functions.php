@@ -96,6 +96,11 @@ function kraske_react_2016_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'kraske_react_2016_scripts' );
 
+// We are using a custom emoji font for icons, so we really don't want wordpress
+// Adding these!
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
 /**
  * Custom template tags for this theme.
  */

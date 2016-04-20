@@ -325,6 +325,17 @@ ins {
 big {
   font-size: 125%; }
 
+/*!
+EmojiSymbols Font (c)blockworks - Kenichi Kaneko
+http://emojisymbols.com/
+*/
+@font-face {
+  font-family: 'Emoji';
+  src: url("client/static/assets/EmojiSymbols-Regular.woff"); }
+
+.entry-cat-icon {
+  font-family: 'Emoji', sans-serif; }
+
 /**
  * Layout Related Variables
  */

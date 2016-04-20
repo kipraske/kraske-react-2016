@@ -67,3 +67,18 @@ ins {
 big {
 	font-size: 125%;
 }
+
+// Emoji Stuff - As per the font licence for this black and white emoji font
+// I need to include this in the CSS output
+/*!
+EmojiSymbols Font (c)blockworks - Kenichi Kaneko
+http://emojisymbols.com/
+*/
+@font-face {
+  font-family: 'Emoji';
+  src: url('client/static/assets/EmojiSymbols-Regular.woff');
+}
+
+.entry-cat-icon{
+	font-family: 'Emoji', sans-serif;
+}

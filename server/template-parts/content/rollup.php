@@ -17,7 +17,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-cat-icon" title="category-icon"></div>
+	<div class="entry-cat-icon" title="category-icon">&#x1F3B6</div>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
