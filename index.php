@@ -29,12 +29,14 @@ if ( have_posts() ) :
 
 	/* Start the Loop */
 	while ( have_posts() ) : the_post();
-		if ( is_singular() ){
-			// Pages and posts use the same "single" template
-			get_template_part( 'server/template-parts/content/single');
-		} else {
-			get_template_part( 'server/template-parts/content/rollup');
-		}
+	if ( is_page( 'menu' ) ){
+		get_template_part( 'server/template-parts/menu');
+	} else if ( is_singular() ){
+		// Pages and posts use the same "single" template
+		get_template_part( 'server/template-parts/content/single');
+	} else {
+		get_template_part( 'server/template-parts/content/rollup');
+	}
 	endwhile;
 
 	the_posts_navigation();
