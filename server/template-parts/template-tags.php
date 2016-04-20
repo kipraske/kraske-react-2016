@@ -76,6 +76,16 @@ function kraske_react_2016_get_category_icon( $category ){
 }
 
 /**
+ * String output version of the archive title wp function
+ *
+ */
+function kraske_react_2016_archive_title(){
+	ob_start();
+	the_archive_title();
+	return ob_get_clean();
+}
+
+/**
  * Returns the results of body_class() rather than echoing it
  *
  * @param $class is the param of body_class

@@ -15,10 +15,15 @@
 get_header(); ?>
 
 <div id="content" class="site-content">
-<?php if ( ! is_singular() ){ ?>
-	<h1 class="rollup-title"> ~ TODO ~ </h1>
+<?php if ( is_home() ){ ?>
+	<h1 class="rollup-title">Blog</h1>
+<?php } else if ( is_archive() ) { ?>
+	<h1 class="rollup-title"><?php echo kraske_react_2016_archive_title();?> </h1>
+<?php } else if ( is_search() ) { ?>
+	<h1 class="rollup-title">Search</h1>
+<?php } else if ( is_page( 'menu' ) ) { ?>
+	<h1 class="rollup-title">Menu</h1>
 <?php }
-
 
 if ( have_posts() ) :
 
