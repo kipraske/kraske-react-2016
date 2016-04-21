@@ -44,11 +44,12 @@ function kraske_react_2016_category_list(){
 }
 
 /**
-* One day taxononomies may have meta, but for now let's just hardcode this in there
-*
-* @param $category is the category you want to output this stuff
+* One day taxononomies may have meta, but for now let's just hardcode this in thered
 */
-function kraske_react_2016_get_category_icon( $category ){
+function kraske_react_2016_get_category_icon( ){
+	$categories = get_the_category();
+	$category = $categories[0]; // just make an icon for the first one
+
 	// Note the icon font just uses another font for the old unicode symbols
 	// so to keep the same size use the newer unicode blocks (1Fxxx)
 	$unicodeCatMap = array(

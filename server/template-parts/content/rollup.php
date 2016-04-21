@@ -17,10 +17,8 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php
-	$categories = get_the_category();
-	echo kraske_react_2016_get_category_icon( $categories[0] );
-	?>
+	<?php echo kraske_react_2016_get_category_icon(); ?>
+	
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->

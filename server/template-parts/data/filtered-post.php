@@ -11,6 +11,10 @@ return array(
 	excerpt => esc_html( get_the_excerpt() ),
 	title => esc_html( get_the_title() ),
 	template_tags => array(
+		category => array(
+			'icon' => kraske_react_2016_get_category_icon(),
+			'list' => kraske_react_2016_category_list(),
+		),
 		posted_on => kraske_react_2016_posted_on(),
 	),
 );
