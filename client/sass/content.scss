@@ -96,7 +96,39 @@
 .main-navigation{
 	position: relative;
 
-	.search-form:before,
+	.search-form{
+		position: relative;
+		// pallete specific styles in colors.scss
+
+		.search-field{
+			width:100%;
+			padding-right: 4em;
+			padding-left: 10px;
+			border: 2px solid black;
+			outline: none;
+			line-height: 2em;
+			font-size: 1.1em;
+		}
+
+		.search-submit{
+			width: 2em;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      font-size: 2em;
+			background-color: white;
+      border: 2px solid black;
+			box-shadow: none;
+			outline:none;
+      padding: 0;
+		}
+
+		.search-submit:hover {
+			box-shadow: none;
+		}
+	}
+
 	.menu-item:before {
 		content:
 			". . . . . . . . . . . . . . . . . . . . "
@@ -114,11 +146,6 @@
 	.menu a{
 		display: inline;
 		padding-right: 0.2em;
-		position: relative;
-		background-color: $backgroundColor;
-	}
-
-	.search-submit {
 		position: relative;
 		background-color: $backgroundColor;
 	}

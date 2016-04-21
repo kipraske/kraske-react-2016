@@ -333,7 +333,8 @@ http://emojisymbols.com/
   font-family: 'Emoji';
   src: url("client/static/assets/EmojiSymbols-Regular.woff"); }
 
-.entry-cat-icon {
+.entry-cat-icon,
+.search-submit {
   font-family: 'Emoji', sans-serif; }
 
 /**
@@ -423,6 +424,17 @@ http://emojisymbols.com/
 .color-palette-1 .entry-cat-icon {
   text-shadow: 0 0 0.2em midnightblue; }
 
+.color-palette-1 .main-navigation .search-form .search-field:focus {
+  box-shadow: 0 0 1em 0.25em midnightblue; }
+
+.color-palette-1 .main-navigation .search-form .search-submit:focus {
+  box-shadow: 0 0 1em 0.25em midnightblue;
+  text-shadow: 0 0 0.2em midnightblue; }
+
+.color-palette-1 .main-navigation .search-form .search-submit:hover {
+  background-color: midnightblue;
+  color: white; }
+
 .color-palette-2 a {
   color: #B90239; }
 
@@ -441,6 +453,17 @@ http://emojisymbols.com/
 
 .color-palette-2 .entry-cat-icon {
   text-shadow: 0 0 0.2em #800025; }
+
+.color-palette-2 .main-navigation .search-form .search-field:focus {
+  box-shadow: 0 0 1em 0.25em #800025; }
+
+.color-palette-2 .main-navigation .search-form .search-submit:focus {
+  box-shadow: 0 0 1em 0.25em #800025;
+  text-shadow: 0 0 0.2em #800025; }
+
+.color-palette-2 .main-navigation .search-form .search-submit:hover {
+  background-color: #800025;
+  color: white; }
 
 .color-palette-3 a {
   color: #347200; }
@@ -461,6 +484,17 @@ http://emojisymbols.com/
 .color-palette-3 .entry-cat-icon {
   text-shadow: 0 0 0.2em #144A00; }
 
+.color-palette-3 .main-navigation .search-form .search-field:focus {
+  box-shadow: 0 0 1em 0.25em #144A00; }
+
+.color-palette-3 .main-navigation .search-form .search-submit:focus {
+  box-shadow: 0 0 1em 0.25em #144A00;
+  text-shadow: 0 0 0.2em #144A00; }
+
+.color-palette-3 .main-navigation .search-form .search-submit:hover {
+  background-color: #144A00;
+  color: white; }
+
 .color-palette-4 a {
   color: #006C6C; }
 
@@ -480,6 +514,17 @@ http://emojisymbols.com/
 .color-palette-4 .entry-cat-icon {
   text-shadow: 0 0 0.2em #004F80; }
 
+.color-palette-4 .main-navigation .search-form .search-field:focus {
+  box-shadow: 0 0 1em 0.25em #004F80; }
+
+.color-palette-4 .main-navigation .search-form .search-submit:focus {
+  box-shadow: 0 0 1em 0.25em #004F80;
+  text-shadow: 0 0 0.2em #004F80; }
+
+.color-palette-4 .main-navigation .search-form .search-submit:hover {
+  background-color: #004F80;
+  color: white; }
+
 a:visited {
   color: purple; }
 
@@ -498,8 +543,10 @@ a {
 
 .site-header,
 .site-footer,
-.site-logo {
-  transition: box-shadow 0.5s; }
+.site-logo,
+.search-form .search-field,
+.search-form .search-submit {
+  transition: box-shadow 0.5s, color 0.5s, background-color 0.5s; }
 
 .color-palette-transition a {
   color: black;
@@ -507,7 +554,9 @@ a {
 
 .color-palette-transition .site-header,
 .color-palette-transition .site-footer,
-.color-palette-transition .site-logo {
+.color-palette-transition .site-logo,
+.color-palette-transition .search-form .search-field,
+.color-palette-transition .search-form .search-submit {
   transition: none; }
 
 /*--------------------------------------------------------------
@@ -756,7 +805,30 @@ textarea {
 
 .main-navigation {
   position: relative; }
-  .main-navigation .search-form:before,
+  .main-navigation .search-form {
+    position: relative; }
+    .main-navigation .search-form .search-field {
+      width: 100%;
+      padding-right: 4em;
+      padding-left: 10px;
+      border: 2px solid black;
+      outline: none;
+      line-height: 2em;
+      font-size: 1.1em; }
+    .main-navigation .search-form .search-submit {
+      width: 2em;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      font-size: 2em;
+      background-color: white;
+      border: 2px solid black;
+      box-shadow: none;
+      outline: none;
+      padding: 0; }
+    .main-navigation .search-form .search-submit:hover {
+      box-shadow: none; }
   .main-navigation .menu-item:before {
     content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
     height: 1.8em;
@@ -768,9 +840,6 @@ textarea {
   .main-navigation .menu a {
     display: inline;
     padding-right: 0.2em;
-    position: relative;
-    background-color: white; }
-  .main-navigation .search-submit {
     position: relative;
     background-color: white; }
   .main-navigation .menu,

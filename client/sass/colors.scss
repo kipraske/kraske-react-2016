@@ -56,6 +56,20 @@ $accent-dark-colors:
 			text-shadow: 0 0 0.2em nth($accent-dark-colors, $i);
 		}
 
+		.main-navigation .search-form .search-field:focus{
+			box-shadow: 0 0 1em .25em nth($accent-dark-colors, $i);
+		}
+
+		.main-navigation .search-form .search-submit:focus{
+			box-shadow: 0 0 1em .25em nth($accent-dark-colors, $i);
+			text-shadow: 0 0 0.2em nth($accent-dark-colors, $i);
+		}
+
+		.main-navigation .search-form .search-submit:hover{
+			background-color: nth($accent-dark-colors, $i);
+			color: white;
+		}
+
 	}
 }
 
@@ -77,14 +91,16 @@ a:visited {
 }
 
 // Transitions
-a {
+a{
 	transition: color 0.5s;
 }
 
 .site-header,
 .site-footer,
-.site-logo {
-	transition: box-shadow 0.5s;
+.site-logo,
+.search-form .search-field,
+.search-form .search-submit {
+	transition: box-shadow 0.5s, color 0.5s, background-color 0.5s;
 }
 
 // Transition Through Palette
@@ -96,7 +112,9 @@ a {
 
 	.site-header,
 	.site-footer,
-	.site-logo {
+	.site-logo,
+	.search-form .search-field,
+	.search-form .search-submit {
 		transition: none;
 	}
 }
