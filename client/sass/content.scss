@@ -109,7 +109,7 @@
 	}
 
 	.search-form label,
-	.menu-item {
+	.menu a{
 		display: inline;
 		padding-right: 0.2em;
 		position: relative;
@@ -119,6 +119,17 @@
 	.search-submit {
 		position: relative;
 		background-color: $backgroundColor;
+	}
+
+	.menu, .menu-item {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: block;
+	}
+
+	.sub-menu {
+		font-style: italic;
 	}
 }
 
