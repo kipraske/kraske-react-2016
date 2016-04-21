@@ -759,9 +759,11 @@ textarea {
   .main-navigation .search-form:before,
   .main-navigation .menu-item:before {
     content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
-    height: 1.2em;
+    height: 1.8em;
+    font-size: 0.8em;
     overflow: hidden;
-    position: absolute; }
+    position: absolute;
+    padding-top: 0.7em; }
   .main-navigation .search-form label,
   .main-navigation .menu a {
     display: inline;
@@ -771,13 +773,28 @@ textarea {
   .main-navigation .search-submit {
     position: relative;
     background-color: white; }
-  .main-navigation .menu, .main-navigation .menu-item {
+  .main-navigation .menu,
+  .main-navigation .menu-item {
     list-style: none;
     margin: 0;
     padding: 0;
     display: block; }
-  .main-navigation .sub-menu {
+  .main-navigation .menu-item,
+  .main-navigation .search-form {
+    margin-bottom: 1.5em; }
+  .main-navigation .menu-item a {
+    font-size: 1.2em; }
+  .main-navigation .sub-menu .menu-item {
+    display: inline;
     font-style: italic; }
+  .main-navigation .sub-menu .menu-item {
+    font-size: 0.8em; }
+  .main-navigation .sub-menu .menu-item:after {
+    content: ', '; }
+  .main-navigation .sub-menu .menu-item:last-child:after {
+    content: ''; }
+  .main-navigation .sub-menu .menu-item:before {
+    content: ''; }
 
 .comment-content a {
   word-wrap: break-word; }

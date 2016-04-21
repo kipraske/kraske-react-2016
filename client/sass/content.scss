@@ -103,9 +103,11 @@
 			". . . . . . . . . . . . . . . . . . . . "
 			". . . . . . . . . . . . . . . . . . . . "
 			". . . . . . . . . . . . . . . . . . . . ";
-		height: 1.2em;
+		height: 1.8em;
+		font-size: 0.8em;
 		overflow: hidden;
 		position: absolute;
+		padding-top: 0.7em;
 	}
 
 	.search-form label,
@@ -121,15 +123,42 @@
 		background-color: $backgroundColor;
 	}
 
-	.menu, .menu-item {
+	.menu,
+	.menu-item {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		display: block;
 	}
 
-	.sub-menu {
+	.menu-item,
+	.search-form {
+		margin-bottom: 1.5em;
+	}
+
+	.menu-item a{
+		font-size: 1.2em;
+	}
+
+	.sub-menu .menu-item{
+		display:inline;
 		font-style: italic;
+	}
+
+	.sub-menu .menu-item{
+		font-size: 0.8em;
+	}
+
+	.sub-menu .menu-item:after {
+		content: ', ';
+	}
+
+	.sub-menu .menu-item:last-child:after {
+		content: '';
+	}
+
+	.sub-menu .menu-item:before{
+		content: ''; // no dots for submenu!
 	}
 }
 
