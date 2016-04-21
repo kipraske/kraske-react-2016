@@ -73,6 +73,8 @@ class Page extends React.Component {
 			contentElement = <None />;
 		}
 
+		console.log(numberOfPosts);
+
 		return (
 			<div id="page" ref="pageContainer" className={this.state.pageClass}>
 				<HeaderSkipLink />

@@ -86,8 +86,6 @@ function kraske_react_2016_scripts() {
 
 	wp_enqueue_script( 'kraske-react-2016-app', get_template_directory_uri() . '/client/js/app.js', array('kraske-react-2016-lib'), '20151215', true );
 
-	wp_enqueue_script( 'kraske-react-2016-navigation', get_template_directory_uri() . '/client/static/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'kraske-react-2016-skip-link-focus-fix', get_template_directory_uri() . '/client/static/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -121,3 +119,37 @@ require get_template_directory() . '/server/inc/customizer.php';
  * Hijack the main loop to get data instead of html
  */
 require get_template_directory() . '/server/inc/return-instead.php';
+
+/**
+* Returns the template type and title for the current page, used for
+* routing on the react end of things
+*
+* @returns array|bool - array of template info, false otherwise
+*/
+function kraske_react_2016_get_template() {
+	if ( is_home() ){
+		$template = array(
+			type => 'rollup',
+			title => 'Blog',
+		);
+	} else if ( is_archive() ) {
+		$template = array(
+			type => 'rollup',
+			title => kraske_react_2016_archive_title(),
+		);
+	} else if ( is_search() ) {
+		$template = array(
+			type => 'rollup',
+			title => 'Search',
+		);
+	} else if ( is_page( 'menu' ) ) {
+		$template = array(
+			type => 'menu',
+			title => 'Menu',
+		);
+	} else {
+		$template = false;
+	}
+
+	return $template;
+}

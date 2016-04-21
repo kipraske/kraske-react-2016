@@ -10,12 +10,15 @@ const Rollup = (props) => {
 		)
 	}
 
+	var articleClass = props.post.css_class + ' rollup-item';
+
 	return (
-		<article id={props.post.id} className={props.post.css_class}>
+		<article id={props.post.id} className={articleClass}>
 			<header classNAme="entry-header">
 				<h2 className="entry-title"><a href={props.post.permalink}>{props.post.title}</a></h2>
 				{postedOn}
 			</header>
+			{category.icon}
 			<div className="entry-summary" dangerouslySetInnerHTML={excerptHTML}></div>
 		</article>
 	);

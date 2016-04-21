@@ -36,6 +36,7 @@ function hijack_main_loop_to_return_instead( $query ) {
 		}
 
 		$return_data = array(
+			template => kraske_react_2016_get_template(),
 			posts => $filtered_posts,
 			body_class => kraske_react_2016_body_class_str('site')
 		);

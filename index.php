@@ -12,17 +12,14 @@
  * @package Kraske-react-2016
  */
 
-get_header(); ?>
+get_header();
+$template = kraske_react_2016_get_template();
+?>
 
 <div id="content" class="site-content">
-<?php if ( is_home() ){ ?>
-	<h1 class="rollup-title">Blog</h1>
-<?php } else if ( is_archive() ) { ?>
-	<h1 class="rollup-title"><?php echo kraske_react_2016_archive_title();?> </h1>
-<?php } else if ( is_search() ) { ?>
-	<h1 class="rollup-title">Search</h1>
-<?php } else if ( is_page( 'menu' ) ) { ?>
-	<h1 class="rollup-title">Menu</h1>
+
+<?php if ($template) { ?>
+	<h1 class="rollup-title"><?php echo $template['title'] ?></h1>
 <?php }
 
 if ( have_posts() ) :
