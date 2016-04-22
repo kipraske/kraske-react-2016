@@ -16,7 +16,7 @@ get_header();
 $template = kraske_react_2016_get_template();
 ?>
 
-<div id="content" class="site-content">
+<main id="content" class="site-content">
 
 <?php if ($template) { ?>
 	<h1 class="rollup-title"><?php echo $template['title'] ?></h1>
@@ -44,7 +44,7 @@ else :
 
 endif; ?>
 
-</div><!-- #content -->
+</main><!-- #content -->
 
 <?php
 get_footer();

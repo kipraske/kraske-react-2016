@@ -148,7 +148,10 @@ function kraske_react_2016_get_template() {
 			title => 'Menu',
 		);
 	} else {
-		$template = false;
+		$template = array(
+			type => 'single',
+			title => null,
+		);
 	}
 
 	return $template;

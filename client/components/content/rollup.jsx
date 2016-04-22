@@ -1,7 +1,9 @@
 var React = require('react');
 
 const Rollup = (props) => {
-	var excerptHTML = {__html: props.post.excerpt};
+	// wpautop...
+	var excerptHTML = {__html: '<p>' + props.post.excerpt + '</p>'};
+
 	var postedOn;
 	if (props.post.post_type === 'post'){
 		var postedOnHTML = {__html: props.post.template_tags.posted_on};

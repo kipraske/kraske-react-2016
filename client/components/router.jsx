@@ -51,7 +51,8 @@ class Router extends React.Component {
 					self.setState({
 						hasServerData: true,
 						posts: data.posts,
-						bodyClass: data.body_class
+						bodyClass: data.body_class,
+						template: data.template
 					});
 					console.log(data);
 				});
@@ -67,6 +68,7 @@ class Router extends React.Component {
 			return (
 				<Page posts={this.state.posts}
 					pageClass={this.state.bodyClass}
+					template={this.state.template}
 					hasServerData={this.state.hasServerData}
 					initialPage={this.props.initialPage}
 					initialPageClass={this.props.initialBodyClass}/>

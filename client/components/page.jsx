@@ -61,25 +61,35 @@ class Page extends React.Component {
 		// This is the normal post-renderer react apps
 		var numberOfPosts = this.props.posts.length;
 		var contentElement;
-		if (numberOfPosts > 1) {
-			contentElement = [];
-			for (let post of this.props.posts){
-				contentElement.push(<Rollup post={post} key={post.id}/>);
-			}
-		} else if (numberOfPosts === 1) {
-			let post = this.props.posts[0];
-			contentElement = <Single post={post}/>;
-		} else {
-			contentElement = <None />;
-		}
+		var contentHeader;
 
-		console.log(numberOfPosts);
+		if (this.props.posts.length === 0){
+			contentElement = <None />;
+		} else {
+			switch (this.props.template.type){
+				case 'menu':
+					contentHeader = <h1 className="rollup-title">{this.props.template.title}</h1>;
+					contentElement = <div> ** TODO menu template **</div>;
+					break;
+				case 'rollup':
+					contentHeader = <h1 className="rollup-title">{this.props.template.title}</h1>;
+					contentElement = [];
+					for (let post of this.props.posts){
+						contentElement.push(<Rollup post={post} key={post.id}/>);
+					}
+					break;
+				case 'single':
+					let post = this.props.posts[0];
+					contentElement = <Single post={post}/>;
+			}
+		}
 
 		return (
 			<div id="page" ref="pageContainer" className={this.state.pageClass}>
 				<HeaderSkipLink />
 				<Header />
 				<main id="content" className="site-content">
+					{contentHeader}
 					{contentElement}
 				</main>
 				<Footer />
