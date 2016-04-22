@@ -21,17 +21,28 @@ class Router extends React.Component {
 		}
 	}
 
+	/**
+	 * Helper function to add Query String Parameter to end of url
+	 *
+	 * @returns querystring with param appended.
+	 */
+	static updatePathWithNewQuery(newParam, path, existingQuerystring=''){
+		var seperatorApersand = '';
+		if (existingQuerystring){
+			seperatorApersand = '&';
+		}
+		return path + '?' + existingQuerystring + seperatorApersand + newParam;
+	}
+
 	componentDidMount() {
 		var self = this;
 
+		urlRouter( '/menu', function( ctx ) {
+			console.log("MENU!");
+		});
+
 		urlRouter( '*', function ( ctx ) {
-			var pathName = ctx.pathname;
-			var seperatorApersand = '';
-			if (ctx.querystring){
-				seperatorApersand = '&';
-			}
-			var newQuery = '?' + ctx.querystring + seperatorApersand + 'return_instead=posts-json';
-			var dataPath = pathName + newQuery;
+			var dataPath = Router.updatePathWithNewQuery('return_instead=posts-json', ctx.pathname, ctx.querystring);
 			request
 				.get( dataPath )
 				.end( function( err, res ) {
