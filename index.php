@@ -18,7 +18,7 @@ $template = kraske_react_2016_get_template();
 
 <main id="content" class="site-content">
 
-<?php if ($template) { ?>
+<?php if ($template.type !== 'single') { ?>
 	<h1 class="rollup-title"><?php echo $template['title'] ?></h1>
 <?php }
 
@@ -26,21 +26,25 @@ if ( have_posts() ) :
 
 	/* Start the Loop */
 	while ( have_posts() ) : the_post();
-	if ( is_page( 'menu' ) ){
-		get_template_part( 'server/template-parts/menu');
-	} else if ( is_singular() ){
-		// Pages and posts use the same "single" template
-		get_template_part( 'server/template-parts/content/single');
-	} else {
-		get_template_part( 'server/template-parts/content/rollup');
+
+	switch ($template['type']) {
+		case 'menu':
+			get_template_part( 'server/template-parts/content/menu');
+			break;
+		case 'rollup':
+			get_template_part( 'server/template-parts/content/rollup');
+			break;
+		case 'single':
+			get_template_part( 'server/template-parts/content/single');
 	}
-	endwhile;
+
+endwhile;
 
 	the_posts_navigation();
 
 else :
 
-	get_template_part( 'template-parts/content', 'none' );
+	get_template_part( 'server/template-parts/content/none' );
 
 endif; ?>
 
