@@ -9,7 +9,7 @@ const Menu = (props) => {
 			<form role="search" method="get" className="search-form" action="http://local.react.dev/">
 				<label>
 				<span className="screen-reader-text">Search for:</span>
-				<input type="search" className="search-field" placeholder="Search …" value="" name="s" />
+				<input type="search" className="search-field" placeholder="Search …" name="s" />
 				</label>
 			<button type="submit" className="search-submit">🔎</button>
 			</form>
