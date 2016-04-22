@@ -24,7 +24,7 @@ class Router extends React.Component {
 	/**
 	 * Helper function to add Query String Parameter to end of url
 	 *
-	 * @return querystring with param appended.
+	 * @returns querystring with param appended.
 	 */
 	static updatePathWithNewQuery(newParam, path, existingQuerystring=''){
 		var seperatorApersand = '';
@@ -34,54 +34,43 @@ class Router extends React.Component {
 		return path + '?' + existingQuerystring + seperatorApersand + newParam;
 	}
 
-	/**
-	 * Helper function to parse response as JSON or stop the router and navigate
-	 * to that url if that doesn't work usually because we have not set up a
-	 * route on the server side but also if there is an error
-	 *
-	 * @param string jsonMaybe data string you want to parse
-	 * @param bustUrl is the url you will navigate to if you fail to parse
-	 *
-	 * @return object decoded json data.
-	 * @uses global window.location
-	 * @uses global urlRouter
-	 */
-	 static parseJSONOrBust(jsonMaybe, bustUrl){
-		 try {
-			 var data = JSON.parse(jsonMaybe);
-		 } catch(ex) {
-			 urlRouter.stop();
-			 window.location.href = bustUrl;
-		 }
-		 return data;
- 	}
-
 	componentDidMount() {
 		var self = this;
+
+		urlRouter( '/menu', function( ctx ) {
+			console.log("MENU!");
+		});
 
 		urlRouter( '*', function ( ctx ) {
 			var dataPath = Router.updatePathWithNewQuery('return_instead=posts-json', ctx.pathname, ctx.querystring);
 			request
-			.get( dataPath )
-			.end( function( err, res ) {
-				if (err) {
-					console.error(err);
-					return;
-				}
+				.get( dataPath )
+				.end( function( err, res ) {
+					if (err) {
+						console.error(err);
+						return;
+					}
 
-				var data = Router.parseJSONOrBust(res.text, ctx.canonicalPath);
+					try {
+						var data = JSON.parse(res.text);
+					} catch(ex) {
+						urlRouter.stop();
+						window.location.href = ctx.canonicalPath;
+						return;
+					}
 
-				self.setState({
-					hasServerData: true,
-					posts: data.posts,
-					bodyClass: data.body_class,
-					template: data.template
+					self.setState({
+						hasServerData: true,
+						posts: data.posts,
+						bodyClass: data.body_class,
+						template: data.template
+					});
+					console.log(data);
 				});
-			});
 		});
 
-		// This starts the router
 		urlRouter({
+			// Prevents triggering routing on the initial page load
 			dispatch: false
 		});
 	}
