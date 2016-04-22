@@ -66,14 +66,7 @@ function kraske_react_2016_get_category_icon( ){
 	$icon_html_code = $unicodeCatMap[$category->slug];
 	$category_link = get_category_link( $category->term_id );
 
-	ob_start();
-	?>
-	<div class="entry-cat-icon" title="<?php echo $cateogory->name ?>">
-		<a href="<?php echo $category_link ?>"><?php echo $icon_html_code ?></a>
-	</div>
-	<?php
-
-	return ob_get_clean();
+	return "<a href='$category_link' title='$category->name' > $icon_html_code </a>";
 }
 
 /**

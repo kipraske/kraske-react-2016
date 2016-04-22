@@ -17,8 +17,9 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php echo kraske_react_2016_get_category_icon(); ?>
-	
+	<div class="entry-cat-icon" >
+		<?php echo kraske_react_2016_get_category_icon(); ?>
+	</div>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
