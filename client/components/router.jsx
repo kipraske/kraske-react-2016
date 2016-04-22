@@ -37,10 +37,6 @@ class Router extends React.Component {
 	componentDidMount() {
 		var self = this;
 
-		urlRouter( '/menu', function( ctx ) {
-			console.log("MENU!");
-		});
-
 		urlRouter( '*', function ( ctx ) {
 			var dataPath = Router.updatePathWithNewQuery('return_instead=posts-json', ctx.pathname, ctx.querystring);
 			request
@@ -62,6 +58,7 @@ class Router extends React.Component {
 					self.setState({
 						hasServerData: true,
 						posts: data.posts,
+						menu: data.primary_menu,
 						bodyClass: data.body_class,
 						template: data.template
 					});

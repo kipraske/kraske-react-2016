@@ -10,5 +10,5 @@
 
 <nav id="site-navigation" class="main-navigation" role="navigation">
 	<?php get_search_form() ?>
-	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+	<?php echo kraske_react_2016_get_primary_menu(); ?>
 </nav><!-- #site-navigation -->

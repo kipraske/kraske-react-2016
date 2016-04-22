@@ -37,8 +37,9 @@ function hijack_main_loop_to_return_instead( $query ) {
 
 		$return_data = array(
 			template => kraske_react_2016_get_template(),
+			primary_menu => kraske_react_2016_get_primary_menu(),
+			body_class => kraske_react_2016_body_class_str('site'),
 			posts => $filtered_posts,
-			body_class => kraske_react_2016_body_class_str('site')
 		);
 
 		echo json_encode($return_data);

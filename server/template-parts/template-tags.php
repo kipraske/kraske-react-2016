@@ -80,6 +80,15 @@ function kraske_react_2016_archive_title(){
 }
 
 /**
+ * String output version of the primary menu output
+ */
+function kraske_react_2016_get_primary_menu(){
+	ob_start();
+	wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
+	return ob_get_clean();
+}
+
+/**
  * Returns the results of body_class() rather than echoing it
  *
  * @param $class is the param of body_class
