@@ -5,6 +5,7 @@ var HeaderSkipLink = require('./misc/header-skip-link.jsx');
 var Rollup = require('./content/rollup.jsx');
 var Single = require('./content/single.jsx');
 var None = require('./content/none.jsx');
+var Menu = require('./content/menu.jsx');
 var Footer = require('./footer.jsx');
 
 /**
@@ -69,7 +70,7 @@ class Page extends React.Component {
 			switch (this.props.template.type){
 				case 'menu':
 					contentHeader = <h1 className="rollup-title">{this.props.template.title}</h1>;
-					contentElement = <div> ** TODO menu template **</div>;
+					contentElement = <Menu menuItems={this.props.menu}/>;
 					break;
 				case 'rollup':
 					contentHeader = <h1 className="rollup-title">{this.props.template.title}</h1>;

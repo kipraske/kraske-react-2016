@@ -77,6 +77,7 @@ class Router extends React.Component {
 				<Page posts={this.state.posts}
 					pageClass={this.state.bodyClass}
 					template={this.state.template}
+					menu={this.state.menu}
 					hasServerData={this.state.hasServerData}
 					initialPage={this.props.initialPage}
 					initialPageClass={this.props.initialBodyClass}/>
