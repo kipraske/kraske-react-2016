@@ -6,6 +6,7 @@ var Rollup = require('./content/rollup.jsx');
 var Single = require('./content/single.jsx');
 var None = require('./content/none.jsx');
 var Menu = require('./content/menu.jsx');
+var PostNav = require('./misc/post-navigation.jsx');
 var Footer = require('./footer.jsx');
 
 /**
@@ -63,6 +64,7 @@ class Page extends React.Component {
 		var numberOfPosts = this.props.posts.length;
 		var contentElement;
 		var contentHeader;
+		var postNav;
 
 		if (this.props.posts.length === 0){
 			contentElement = <None />;
@@ -78,6 +80,7 @@ class Page extends React.Component {
 					for (let post of this.props.posts){
 						contentElement.push(<Rollup post={post} key={post.id}/>);
 					}
+					postNav = <PostNav content={this.props.postNav} />
 					break;
 				case 'single':
 					let post = this.props.posts[0];
@@ -92,6 +95,7 @@ class Page extends React.Component {
 				<main id="content" className="site-content">
 					{contentHeader}
 					{contentElement}
+					{postNav}
 				</main>
 				<Footer />
 			</div>

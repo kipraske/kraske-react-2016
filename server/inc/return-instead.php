@@ -14,11 +14,16 @@ function add_query_vars_filter( $vars ){
 }
 add_filter( 'query_vars', 'add_query_vars_filter' );
 
-// TODO - this is a great proof of concept that we can get the data over...
-// but we need to sanitize this output before sending over the wall to the
-// client
-
 function hijack_main_loop_to_return_instead( $query ) {
+	// At pre-get posts some of the query-related globals have not yet been
+	// initialized which messes up some of the wp functions if you try to use them
+	// here.
+	//
+	// TODO - update the frontend primary and post navigation to use the WP REST
+	// API instead of resorting to hacking the wordpress globals
+	global $wp_query;
+	global $paged;
+
 	if ( ! array_key_exists ( 'return_instead' , $query->query_vars ) || ! $query->is_main_query() ) {
 		return;
 	}
@@ -27,17 +32,20 @@ function hijack_main_loop_to_return_instead( $query ) {
 	if ( $return_type === 'posts-json' ){
 
 		// at pre-get-posts we haven't actually gotten the posts from the db yet
-		// So we need to manually fetch them here:
-		$return_query = new WP_Query($query->query);
+		// So we need to manually fetch them here and set any globals that need it
+		$wp_query = new WP_Query($query->query);
+		$paged = get_query_var('paged');
+
 		$filtered_posts = array();
-		while ( $return_query->have_posts() ) {
-			$return_query->the_post();
+		while ( have_posts() ) {
+			the_post();
 			$filtered_posts[] = require( get_template_directory() . '/server/template-parts/data/filtered-post.php');
 		}
 
 		$return_data = array(
 			template => kraske_react_2016_get_template(),
 			primary_menu => kraske_react_2016_get_primary_menu(),
+			post_nav => get_the_posts_navigation(),
 			body_class => kraske_react_2016_body_class_str('site'),
 			posts => $filtered_posts,
 		);

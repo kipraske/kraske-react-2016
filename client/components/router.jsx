@@ -29,7 +29,11 @@ class Router extends React.Component {
 	static updatePathWithNewQuery(newParam, path, existingQuerystring=''){
 		var seperatorApersand = '';
 		if (existingQuerystring){
-			seperatorApersand = '&';
+			if (existingQuerystring.indexOf(newParam) !== -1 ) {
+				return path + '?' + existingQuerystring;
+			} else {
+				seperatorApersand = '&';
+			}
 		}
 		return path + '?' + existingQuerystring + seperatorApersand + newParam;
 	}
@@ -59,6 +63,7 @@ class Router extends React.Component {
 						hasServerData: true,
 						posts: data.posts,
 						menu: data.primary_menu,
+						postNav: data.post_nav,
 						bodyClass: data.body_class,
 						template: data.template
 					});
@@ -78,6 +83,7 @@ class Router extends React.Component {
 					pageClass={this.state.bodyClass}
 					template={this.state.template}
 					menu={this.state.menu}
+					postNav={this.state.postNav}
 					hasServerData={this.state.hasServerData}
 					initialPage={this.props.initialPage}
 					initialPageClass={this.props.initialBodyClass}/>
