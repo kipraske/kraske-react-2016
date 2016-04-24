@@ -13,7 +13,9 @@
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' === get_post_type() ) : ?>
-			<?php echo kraske_react_2016_posted_on(); ?>
+			<span class="posted-on">
+				<?php echo kraske_react_2016_posted_on(); ?>
+			</span>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 

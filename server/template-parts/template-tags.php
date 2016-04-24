@@ -20,7 +20,7 @@ function kraske_react_2016_posted_on() {
 		esc_html( get_the_date() )
 	);
 
-	return '<span class="posted-on">' . $time_string . '</span>';
+	return $time_string;
 
 }
 endif;

@@ -8,7 +8,7 @@ const Rollup = (props) => {
 	if (props.post.post_type === 'post'){
 		var postedOnHTML = {__html: props.post.template_tags.posted_on};
 		postedOn = (
-			<div className="entry-meta" dangerouslySetInnerHTML={postedOnHTML} ></div>
+			<span className="posted-on" dangerouslySetInnerHTML={postedOnHTML} />
 		)
 	}
 
@@ -18,7 +18,7 @@ const Rollup = (props) => {
 
 	return (
 		<article id={props.post.id} className={articleClass}>
-			<header classNAme="entry-header">
+			<header className="entry-header">
 				<h2 className="entry-title"><a href={props.post.permalink}>{props.post.title}</a></h2>
 				{postedOn}
 			</header>
