@@ -40,7 +40,11 @@ if ( have_posts() ) :
 
 endwhile;
 
-the_posts_navigation();
+?>
+<div class="prev-next-posts">
+	<?php the_posts_navigation(); ?>
+</div>
+<?php
 
 else :
 

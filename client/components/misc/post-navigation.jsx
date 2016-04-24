@@ -8,7 +8,7 @@ const PostNavigation = (props) => {
 	var navigation_html = {__html: navHTMLnoLinkQueryString}
 
 	return (
-		<nav className="prev-next-posts" dangerouslySetInnerHTML={navigation_html} />
+		<div className="prev-next-posts" dangerouslySetInnerHTML={navigation_html} />
 	);
 }
 

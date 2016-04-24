@@ -766,6 +766,8 @@ textarea {
   .rollup-item .entry-header:before {
     content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
     height: 1.2em;
+    font-size: 0.8em;
+    top: 0.5em;
     overflow: hidden;
     position: absolute; }
   .rollup-item .entry-title {
@@ -873,6 +875,32 @@ textarea {
 
 .bypostauthor {
   display: block; }
+
+/**
+* For the post navigation links for the rollup
+*/
+.posts-navigation {
+  position: relative;
+  overflow: hidden;
+  font-size: 1.1em; }
+
+.posts-navigation .nav-links:before {
+  content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
+  height: 1.2em;
+  font-size: 0.8em;
+  top: 0.5em;
+  overflow: hidden;
+  position: absolute; }
+
+.posts-navigation .nav-previous {
+  position: relative;
+  float: left;
+  background: white; }
+
+.posts-navigation .nav-next {
+  position: relative;
+  float: right;
+  background: white; }
 
 /*--------------------------------------------------------------
 # Media
