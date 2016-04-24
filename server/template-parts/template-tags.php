@@ -40,7 +40,7 @@ function kraske_react_2016_category_list(){
 	}
 	$link_list_text = implode(' & ', $category_link_list);
 
-	return "<div class='post-category'> A story about $link_list_text...</div>";
+	return "A story about $link_list_text...";
 }
 
 /**

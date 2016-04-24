@@ -6,14 +6,16 @@ const Single = (props) => {
 	if (props.post.post_type === 'post'){
 		var postedOnHTML = {__html: props.post.template_tags.posted_on};
 		postedOn = (
-			<div className="entry-meta" dangerouslySetInnerHTML={postedOnHTML} ></div>
+			<div className="posted-on" dangerouslySetInnerHTML={postedOnHTML} ></div>
 		)
 	}
+	var categoryListHTML = {__html: props.post.template_tags.category.list}
 
 	return (
 		<article id={props.post.id} className={props.post.css_class}>
-			<header classNAme="entry-header">
+			<header className="entry-header">
 				<h1 className="entry-title">{props.post.title}</h1>
+				<div className='post-category' dangerouslySetInnerHTML={categoryListHTML}/>
 				{postedOn}
 			</header>
 			<div className="entry-content" dangerouslySetInnerHTML={contentHTML}></div>

@@ -11,8 +11,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-		the_title( '<h1 class="entry-title">', '</h1>' );
-		echo kraske_react_2016_category_list();
+		the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
+		<div class='post-category'>
+			<?php echo kraske_react_2016_category_list(); ?>
+		</div>
+		<?php
 		if ( 'post' === get_post_type() ) : ?>
 			<span class="posted-on">
 				<?php echo kraske_react_2016_posted_on(); ?>
