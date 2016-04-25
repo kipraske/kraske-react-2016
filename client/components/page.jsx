@@ -33,6 +33,10 @@ class Page extends React.Component {
 	}
 
 	componentDidUpdate(){
+		// It's not pretty, but we should scroll to the top of the page if we
+		// "navigate" to another page with a render
+		window.document.body.scrollTop = 0;
+
 		// Using request animation Frame to ensure that each function is painted
 		// before the next function begins to fire
 		window.requestAnimationFrame( () => {

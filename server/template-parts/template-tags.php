@@ -89,6 +89,15 @@ function kraske_react_2016_get_primary_menu(){
 }
 
 /**
+ * String output version of the entire comments template
+ */
+function kraske_react_2016_get_comments_template(){
+	ob_start();
+	comments_template();
+	return ob_get_clean();
+}
+
+/**
  * Returns the results of body_class() rather than echoing it
  *
  * @param $class is the param of body_class

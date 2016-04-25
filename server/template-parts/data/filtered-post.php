@@ -16,5 +16,6 @@ return array(
 			'list' => kraske_react_2016_category_list(),
 		),
 		posted_on => kraske_react_2016_posted_on(),
+		comments => kraske_react_2016_get_comments_template(),
 	),
 );
