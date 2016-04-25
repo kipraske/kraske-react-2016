@@ -53,7 +53,7 @@ function kraske_react_2016_get_category_icon( ){
 	// Note the icon font just uses another font for the old unicode symbols
 	// so to keep the same size use the newer unicode blocks (1Fxxx)
 	$unicodeCatMap = array(
-		'uncategorized' => '&#x1F40C', // it's a snail
+		'nothing' => '&#x1F40C', // it's a snail
 		'harmonica'     => '&#x1F3B6',
 		'ukulele'       => '&#x1F3B6',
 		'flute'         => '&#x1F3B6',
