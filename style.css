@@ -747,6 +747,19 @@ textarea {
   font-size: 0.9em;
   color: #CCC; }
 
+@media screen and (max-width: 640px) {
+  .site-header {
+    margin-top: 1em; }
+  .site-logo {
+    width: 3em; }
+  .site-footer {
+    height: 5em; }
+  .site-footer:before {
+    height: 4.5em; }
+  .site-info {
+    padding: 1.5em 0;
+    line-height: 1.5em; } }
+
 /**
 * Stuff for the post-content things. This includes both single and post things
 * Since the menu is really its own page too this shares those styles too

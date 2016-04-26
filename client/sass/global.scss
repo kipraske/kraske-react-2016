@@ -59,3 +59,26 @@
   font-size: 0.9em;
   color: $footerTextColor;
 }
+
+@media screen and (max-width: $contentWidth){
+  .site-header{
+    margin-top: 1em;
+  }
+
+  .site-logo{
+    width: 3em;
+  }
+
+  .site-footer{
+    height: 5em;
+  }
+
+  .site-footer:before{
+    height: 4.5em;
+  }
+
+  .site-info{
+    padding: 1.5em 0;
+    line-height: 1.5em;
+  }
+}
