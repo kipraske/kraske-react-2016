@@ -755,6 +755,10 @@ textarea {
   margin: 0 auto;
   max-width: 640px; }
 
+@media screen and (max-width: 660px) {
+  .site-content {
+    margin: 0 20px; } }
+
 .rollup-title {
   text-align: center;
   margin: 0 0 0.5em 0; }
@@ -793,17 +797,33 @@ textarea {
     line-height: 1em;
     top: 0.5em; }
 
-.singular .entry-header {
+.single .entry-header,
+.page .entry-header {
   text-align: center;
   margin: 5em 0 3em 0; }
-  .singular .entry-header .post-category,
-  .singular .entry-header .posted-on {
+  .single .entry-header .post-category,
+  .single .entry-header .posted-on,
+  .page .entry-header .post-category,
+  .page .entry-header .posted-on {
     font-style: italic; }
-  .singular .entry-header h1 {
+  .single .entry-header h1,
+  .page .entry-header h1 {
     margin-bottom: 0;
     line-height: 1em; }
 
-.singular .entry-content p:first-child:first-letter {
+@media screen and (max-width: 640px) {
+  .single .entry-header,
+  .page .entry-header {
+    text-align: left;
+    margin: 3em 0; }
+    .single .entry-header .post-category,
+    .single .entry-header .posted-on,
+    .page .entry-header .post-category,
+    .page .entry-header .posted-on {
+      margin-left: 20px; } }
+
+.single .entry-content p:first-child:first-letter,
+.page .entry-content p:first-child:first-letter {
   font-size: 4em;
   float: left;
   line-height: 0.7em; }

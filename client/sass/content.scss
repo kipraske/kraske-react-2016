@@ -8,6 +8,12 @@
 	max-width: $contentWidth;
 }
 
+@media screen and (max-width: ($contentWidth + 20px)){
+	.site-content{
+		margin: 0 20px;
+	}
+}
+
 // Rollup Styles
 .rollup-title{
 	text-align: center;
@@ -70,7 +76,8 @@
 }
 
 // Single Styles - Designed to look like a chapter in a book
-.singular {
+.single,
+.page {
 	.entry-header {
 		text-align: center;
 		margin: 5em 0 3em 0;
@@ -84,6 +91,19 @@
 			margin-bottom: 0;
 			line-height: 1em;
 		}
+	}
+
+	@media screen and (max-width: $contentWidth){
+		.entry-header{
+			text-align: left;
+			margin: 3em 0;
+
+			.post-category,
+			.posted-on{
+				margin-left: 20px;
+			}
+		}
+
 	}
 
 	.entry-content{
