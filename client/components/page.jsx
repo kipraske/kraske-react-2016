@@ -65,7 +65,6 @@ class Page extends React.Component {
 		}
 
 		// This is the normal post-renderer react apps
-		var numberOfPosts = this.props.posts.length;
 		var contentElement;
 		var contentHeader;
 		var postNav;

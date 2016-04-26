@@ -6,6 +6,8 @@ export NODE_ENV := $(NODE_ENV)
 # Make Commands and variables
 build : build-css build-js
 
+deploy: build uglify
+
 build-css: style.css
 build-js: client/js/app.js
 
@@ -23,6 +25,9 @@ style.css: $(SASS_FILES)
 
 # JS Stuff
 BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ]
+UGLIFY := $(NODE_BIN)/uglifyjs
+UGLIFY_FLAGS = --compress --mangle
+
 COMPONENTS := $(shell \
 	find client/components/. \
 		-not \( -path './.git' -prune \) \
@@ -36,3 +41,7 @@ client/js/lib.js: client/static/js/lib-bundler.js
 
 client/js/app.js: $(COMPONENTS) client/js/lib.js client/
 	$(BROWSERIFY) client/components/index.jsx $(addprefix -x ,$(STATIC_LIBS) ) -o $@
+
+uglify:
+	$(UGLIFY) client/js/lib.js -o client/js/lib.min.js $(UGLIFY_FLAGS)
+	$(UGLIFY) client/js/app.js -o client/js/app.min.js $(UGLIFY_FLAGS)
