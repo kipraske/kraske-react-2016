@@ -501,7 +501,6 @@ var Router = function (_React$Component) {
 						bodyClass: data.body_class,
 						template: data.template
 					});
-					console.log(data);
 				});
 			});
 
