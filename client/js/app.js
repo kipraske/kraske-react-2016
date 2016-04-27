@@ -476,6 +476,14 @@ var Router = function (_React$Component) {
 		value: function componentDidMount() {
 			var self = this;
 
+			// For a static homepage wordpress doesn't know to fetch the page instead
+			// of the default rollup, so we can't use the react routing in this case
+			urlRouter('/', function (ctx) {
+				urlRouter.stop();
+				window.location.href = ctx.canonicalPath;
+				return;
+			});
+
 			urlRouter('*', function (ctx) {
 				var dataPath = Router.updatePathWithNewQuery('return_instead=posts-json', ctx.pathname, ctx.querystring);
 				request.get(dataPath).end(function (err, res) {
