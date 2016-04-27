@@ -424,14 +424,14 @@ http://emojisymbols.com/
 .color-palette-1 .entry-cat-icon {
   text-shadow: 0 0 0.2em midnightblue; }
 
-.color-palette-1 .main-navigation .search-form .search-field:focus {
+.color-palette-1 .search-form .search-field:focus {
   box-shadow: 0 0 1em 0.25em midnightblue; }
 
-.color-palette-1 .main-navigation .search-form .search-submit:focus {
+.color-palette-1 .search-form .search-submit:focus {
   box-shadow: 0 0 1em 0.25em midnightblue;
   text-shadow: 0 0 0.2em midnightblue; }
 
-.color-palette-1 .main-navigation .search-form .search-submit:hover {
+.color-palette-1 .search-form .search-submit:hover {
   background-color: midnightblue;
   color: white; }
 
@@ -454,14 +454,14 @@ http://emojisymbols.com/
 .color-palette-2 .entry-cat-icon {
   text-shadow: 0 0 0.2em #800025; }
 
-.color-palette-2 .main-navigation .search-form .search-field:focus {
+.color-palette-2 .search-form .search-field:focus {
   box-shadow: 0 0 1em 0.25em #800025; }
 
-.color-palette-2 .main-navigation .search-form .search-submit:focus {
+.color-palette-2 .search-form .search-submit:focus {
   box-shadow: 0 0 1em 0.25em #800025;
   text-shadow: 0 0 0.2em #800025; }
 
-.color-palette-2 .main-navigation .search-form .search-submit:hover {
+.color-palette-2 .search-form .search-submit:hover {
   background-color: #800025;
   color: white; }
 
@@ -484,14 +484,14 @@ http://emojisymbols.com/
 .color-palette-3 .entry-cat-icon {
   text-shadow: 0 0 0.2em #144A00; }
 
-.color-palette-3 .main-navigation .search-form .search-field:focus {
+.color-palette-3 .search-form .search-field:focus {
   box-shadow: 0 0 1em 0.25em #144A00; }
 
-.color-palette-3 .main-navigation .search-form .search-submit:focus {
+.color-palette-3 .search-form .search-submit:focus {
   box-shadow: 0 0 1em 0.25em #144A00;
   text-shadow: 0 0 0.2em #144A00; }
 
-.color-palette-3 .main-navigation .search-form .search-submit:hover {
+.color-palette-3 .search-form .search-submit:hover {
   background-color: #144A00;
   color: white; }
 
@@ -514,14 +514,14 @@ http://emojisymbols.com/
 .color-palette-4 .entry-cat-icon {
   text-shadow: 0 0 0.2em #004F80; }
 
-.color-palette-4 .main-navigation .search-form .search-field:focus {
+.color-palette-4 .search-form .search-field:focus {
   box-shadow: 0 0 1em 0.25em #004F80; }
 
-.color-palette-4 .main-navigation .search-form .search-submit:focus {
+.color-palette-4 .search-form .search-submit:focus {
   box-shadow: 0 0 1em 0.25em #004F80;
   text-shadow: 0 0 0.2em #004F80; }
 
-.color-palette-4 .main-navigation .search-form .search-submit:hover {
+.color-palette-4 .search-form .search-submit:hover {
   background-color: #004F80;
   color: white; }
 
@@ -843,30 +843,6 @@ textarea {
 
 .main-navigation {
   position: relative; }
-  .main-navigation .search-form {
-    position: relative; }
-    .main-navigation .search-form .search-field {
-      width: 100%;
-      padding-right: 4em;
-      padding-left: 10px;
-      border: 2px solid black;
-      outline: none;
-      line-height: 2em;
-      font-size: 1.1em; }
-    .main-navigation .search-form .search-submit {
-      width: 2em;
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      font-size: 2em;
-      background-color: white;
-      border: 2px solid black;
-      box-shadow: none;
-      outline: none;
-      padding: 0; }
-    .main-navigation .search-form .search-submit:hover {
-      box-shadow: none; }
   .main-navigation .menu-item:before {
     content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
     height: 1.8em;
@@ -902,6 +878,31 @@ textarea {
     content: ''; }
   .main-navigation .sub-menu .menu-item:before {
     content: ''; }
+
+.search-form {
+  position: relative; }
+  .search-form .search-field {
+    width: 100%;
+    padding-right: 4em;
+    padding-left: 10px;
+    border: 2px solid black;
+    outline: none;
+    line-height: 2em;
+    font-size: 1.1em; }
+  .search-form .search-submit {
+    width: 2em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 2em;
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: none;
+    outline: none;
+    padding: 0; }
+  .search-form .search-submit:hover {
+    box-shadow: none; }
 
 .comment-content a {
   word-wrap: break-word; }

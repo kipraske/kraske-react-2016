@@ -56,16 +56,16 @@ $accent-dark-colors:
 			text-shadow: 0 0 0.2em nth($accent-dark-colors, $i);
 		}
 
-		.main-navigation .search-form .search-field:focus{
+		.search-form .search-field:focus{
 			box-shadow: 0 0 1em .25em nth($accent-dark-colors, $i);
 		}
 
-		.main-navigation .search-form .search-submit:focus{
+		.search-form .search-submit:focus{
 			box-shadow: 0 0 1em .25em nth($accent-dark-colors, $i);
 			text-shadow: 0 0 0.2em nth($accent-dark-colors, $i);
 		}
 
-		.main-navigation .search-form .search-submit:hover{
+		.search-form .search-submit:hover{
 			background-color: nth($accent-dark-colors, $i);
 			color: white;
 		}
