@@ -46,7 +46,7 @@ function hijack_main_loop_to_return_instead( $query ) {
 			template => kraske_react_2016_get_template(),
 			primary_menu => kraske_react_2016_get_primary_menu(),
 			post_nav => get_the_posts_navigation(),
-			body_class => kraske_react_2016_body_class_str('site'),
+			body_class => kraske_react_2016_body_class_str(),
 			posts => $filtered_posts,
 		);
 

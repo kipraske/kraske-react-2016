@@ -14,6 +14,9 @@
  * @return array
  */
 function kraske_react_2016_body_classes( $classes ) {
+	// Globally adds 'site' to whenever body_classes is called
+	$classes[] = 'site';
+
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';

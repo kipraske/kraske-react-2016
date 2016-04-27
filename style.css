@@ -810,33 +810,33 @@ textarea {
     line-height: 1em;
     top: 0.5em; }
 
-.single .entry-header,
-.page .entry-header {
+.site.single .entry-header,
+.site.page .entry-header {
   text-align: center;
   margin: 5em 0 3em 0; }
-  .single .entry-header .post-category,
-  .single .entry-header .posted-on,
-  .page .entry-header .post-category,
-  .page .entry-header .posted-on {
+  .site.single .entry-header .post-category,
+  .site.single .entry-header .posted-on,
+  .site.page .entry-header .post-category,
+  .site.page .entry-header .posted-on {
     font-style: italic; }
-  .single .entry-header h1,
-  .page .entry-header h1 {
+  .site.single .entry-header h1,
+  .site.page .entry-header h1 {
     margin-bottom: 0;
     line-height: 1em; }
 
 @media screen and (max-width: 640px) {
-  .single .entry-header,
-  .page .entry-header {
+  .site.single .entry-header,
+  .site.page .entry-header {
     text-align: left;
     margin: 3em 0; }
-    .single .entry-header .post-category,
-    .single .entry-header .posted-on,
-    .page .entry-header .post-category,
-    .page .entry-header .posted-on {
+    .site.single .entry-header .post-category,
+    .site.single .entry-header .posted-on,
+    .site.page .entry-header .post-category,
+    .site.page .entry-header .posted-on {
       margin-left: 20px; } }
 
-.single .entry-content p:first-child:first-letter,
-.page .entry-content p:first-child:first-letter {
+.site.single .entry-content p:first-child:first-letter,
+.site.page .entry-content p:first-child:first-letter {
   font-size: 4em;
   float: left;
   line-height: 0.7em; }
