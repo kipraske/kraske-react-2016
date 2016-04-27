@@ -25,7 +25,7 @@ class Page extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps){
-		var pageClass = nextProps.pageClass;
+		var pageClass = nextProps.bodyClass || nextProps.initialPageClass;
 		var newPaletteClass = pageClass.match(/color-palette-\d/)[0];
 		var newClassList = pageClass.replace(/\s?color-palette-\d/g, '');
 		this.setState({colorPalette: newPaletteClass});
@@ -90,6 +90,8 @@ class Page extends React.Component {
 					contentElement = <Single post={post}/>;
 			}
 		}
+
+		console.log(this.props.ajaxState);
 
 		return (
 			<div id="page" ref="pageContainer" className={this.state.pageClass}>

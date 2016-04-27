@@ -10,14 +10,19 @@ var React = require( 'react' );
 var urlRouter = require( 'page' );
 var request = require( 'superagent' );
 
+var ajaxStates = require( './enum/ajaxStates.js');
 var Page = require( './Page.jsx' );
+
 class Router extends React.Component {
 
 	constructor(props) {
 		super(props);
     this.state = {
 			hasServerData: false,
-			posts: []
+			ajaxState: ajaxStates.INITIAL,
+			posts: [],
+			initialPage: this.props.initialPage,
+			initialPageClass: props.initialBodyClass,
 		}
 	}
 
@@ -50,7 +55,14 @@ class Router extends React.Component {
 		});
 
 		urlRouter( '*', function ( ctx ) {
+			if (self.state.ajaxState === ajaxStates.LOADING){
+				return;
+			}
 			var dataPath = Router.updatePathWithNewQuery('return_instead=posts-json', ctx.pathname, ctx.querystring);
+			self.setState({
+				ajaxState: ajaxStates.LOADING
+			});
+
 			request
 				.get( dataPath )
 				.end( function( err, res ) {
@@ -73,7 +85,8 @@ class Router extends React.Component {
 						menu: data.primary_menu,
 						postNav: data.post_nav,
 						bodyClass: data.body_class,
-						template: data.template
+						template: data.template,
+						ajaxState: ajaxStates.DONE,
 					});
 				});
 		});
@@ -86,14 +99,7 @@ class Router extends React.Component {
 
 	render() {
 			return (
-				<Page posts={this.state.posts}
-					pageClass={this.state.bodyClass}
-					template={this.state.template}
-					menu={this.state.menu}
-					postNav={this.state.postNav}
-					hasServerData={this.state.hasServerData}
-					initialPage={this.props.initialPage}
-					initialPageClass={this.props.initialBodyClass}/>
+				<Page {...this.state} />
 			);
 		}
 }
