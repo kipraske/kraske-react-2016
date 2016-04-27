@@ -24,7 +24,7 @@ style.css: $(SASS_FILES)
 	$(SASS) client/sass/style.scss $@
 
 # JS Stuff
-BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ]
+BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ] --debug
 UGLIFY := $(NODE_BIN)/uglifyjs
 UGLIFY_FLAGS = --compress --mangle
 

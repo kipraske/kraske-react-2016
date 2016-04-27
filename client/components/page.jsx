@@ -70,7 +70,7 @@ class Page extends React.Component {
 		var postNav;
 
 		if (this.props.posts.length === 0){
-			contentElement = <None />;
+			contentElement = <None menuItems={this.props.menu}/>;
 		} else {
 			switch (this.props.template.type){
 				case 'menu':

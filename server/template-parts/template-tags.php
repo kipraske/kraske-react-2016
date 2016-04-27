@@ -102,7 +102,7 @@ function kraske_react_2016_get_comments_template(){
  *
  * @param $class is the param of body_class
  */
-function kraske_react_2016_body_class_str($class){
+function kraske_react_2016_body_class_str( $class = array() ){
 	$body_classes = get_body_class($class);
 	return implode(' ', $body_classes);
 }
