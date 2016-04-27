@@ -24,7 +24,8 @@ style.css: $(SASS_FILES)
 	$(SASS) client/sass/style.scss $@
 
 # JS Stuff
-BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ] --debug
+# It is helpful to put in debug flags if needed in these
+BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ]
 UGLIFY := $(NODE_BIN)/uglifyjs
 UGLIFY_FLAGS = --compress --mangle
 
