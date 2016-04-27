@@ -28,7 +28,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-logo">
-			<a href="<?php echo esc_url( home_url( '/menu' ) ); ?>" title="Menu">
+			<a width="100" height="100" href="<?php echo esc_url( home_url( '/menu' ) ); ?>" title="Menu">
 				<img src="<?php echo get_template_directory_uri() . '/client/static/assets/site-logo.png'?>" alt="Site Logo">
 			</a>
 		</div>

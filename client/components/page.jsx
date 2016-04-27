@@ -1,5 +1,7 @@
 var React = require('react');
 
+var ajaxStates = require('./enum/ajaxStates.js');
+
 var Header = require('./header.jsx');
 var HeaderSkipLink = require('./misc/header-skip-link.jsx');
 var Rollup = require('./content/rollup.jsx');
@@ -68,6 +70,11 @@ class Page extends React.Component {
 		var contentElement;
 		var contentHeader;
 		var postNav;
+		var isLoading = false;
+
+		if (this.props.ajaxState === ajaxStates.LOADING){
+			isLoading = true;
+		}
 
 		if (this.props.posts.length === 0){
 			contentElement = <None menuItems={this.props.menu}/>;
@@ -91,12 +98,10 @@ class Page extends React.Component {
 			}
 		}
 
-		console.log(this.props.ajaxState);
-
 		return (
 			<div id="page" ref="pageContainer" className={this.state.pageClass}>
 				<HeaderSkipLink />
-				<Header />
+				<Header isLoading={isLoading}/>
 				<main id="content" className="site-content">
 					{contentHeader}
 					{contentElement}
