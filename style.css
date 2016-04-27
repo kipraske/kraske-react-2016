@@ -738,6 +738,9 @@ textarea {
   position: relative;
   top: 2px; }
 
+.site-logo.loading {
+  border: 1px solid white; }
+
 .site-logo.loading img {
   top: 0px; }
 

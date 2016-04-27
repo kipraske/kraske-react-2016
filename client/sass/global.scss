@@ -50,6 +50,10 @@
   top: 2px; // My logo needs a bit of an adjustment to be in the center
 }
 
+.site-logo.loading{
+  border: 1px solid white;
+}
+
 .site-logo.loading img{
   top: 0px;
 }

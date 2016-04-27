@@ -4,7 +4,7 @@ const Header = (props) => {
 	var logoSrc = '/wp-content/themes/kraske-react-2016/client/static/assets/site-logo.png';
 	var logoClass = 'site-logo';
 	if (props.isLoading){
-		logoSrc = '/wp-admin/images/wpspin_light-2x.gif';
+		logoSrc = '/wp-content/themes/kraske-react-2016/client/static/assets/loading.svg';
 		logoClass = 'site-logo loading';
 	}
 
