@@ -182,7 +182,7 @@ var Menu = function Menu(props) {
 		{ id: "site-navigation", className: "main-navigation", role: "navigation" },
 		React.createElement(
 			"form",
-			{ role: "search", method: "get", className: "search-form", action: "http://local.react.dev/" },
+			{ role: "search", method: "get", className: "search-form", action: "/" },
 			React.createElement(
 				"label",
 				null,

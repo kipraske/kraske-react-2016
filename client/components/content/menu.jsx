@@ -6,7 +6,7 @@ const Menu = (props) => {
 
 	return (
 		<nav id="site-navigation" className="main-navigation" role="navigation">
-			<form role="search" method="get" className="search-form" action="http://local.react.dev/">
+			<form role="search" method="get" className="search-form" action="/">
 				<label>
 				<span className="screen-reader-text">Search for:</span>
 				<input type="search" className="search-field" placeholder="Search …" name="s" />
