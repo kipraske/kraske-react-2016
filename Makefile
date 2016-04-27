@@ -1,12 +1,15 @@
 # Environment Stuff
 NODE_BIN := node_modules/.bin
-NODE_ENV ?= development
+NODE_ENV ?= production
 export NODE_ENV := $(NODE_ENV)
 
 # Make Commands and variables
 build : build-css build-js
 
 deploy: build uglify
+
+install:
+	npm install
 
 build-css: style.css
 build-js: client/js/app.js
