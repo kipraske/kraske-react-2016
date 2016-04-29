@@ -1,12 +1,20 @@
-# Environment Stuff
+# Default Environment Stuff
 NODE_BIN := node_modules/.bin
-NODE_ENV ?= production
-export NODE_ENV := $(NODE_ENV)
 
 # Make Commands and variables
-build : build-css build-js
+debug: DEBUG_FLAGS = --debug
+debug: export NODE_ENV=development
+debug: build
 
-deploy: build uglify
+release: prepare-prod-env build
+
+build: build-css build-js
+
+prepare-prod-env: export NODE_ENV=production
+prepare-prod-env:
+	npm uninstall react
+	echo $$NODE_ENV
+	npm install react
 
 install:
 	npm install
@@ -28,7 +36,7 @@ style.css: $(SASS_FILES)
 
 # JS Stuff
 # It is helpful to put in debug flags if needed in these
-BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ]
+BROWSERIFY ?= $(NODE_BIN)/browserify -t [ babelify --presets [ react es2015 ] ] $(DEBUG_FLAGS)
 UGLIFY := $(NODE_BIN)/uglifyjs
 UGLIFY_FLAGS = --compress --mangle
 
@@ -47,5 +55,5 @@ client/js/app.js: $(COMPONENTS) client/js/lib.js client/
 	$(BROWSERIFY) client/components/index.jsx $(addprefix -x ,$(STATIC_LIBS) ) -o $@
 
 uglify:
-	$(UGLIFY) client/js/lib.js -o client/js/lib.min.js $(UGLIFY_FLAGS)
-	$(UGLIFY) client/js/app.js -o client/js/app.min.js $(UGLIFY_FLAGS)
+	$(UGLIFY) client/js/lib.js -o client/js/lib.js $(UGLIFY_FLAGS)
+	$(UGLIFY) client/js/app.js -o client/js/app.js $(UGLIFY_FLAGS)
