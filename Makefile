@@ -2,18 +2,15 @@
 NODE_BIN := node_modules/.bin
 
 # Make Commands and variables
-debug: DEBUG_FLAGS = --debug
-debug: export NODE_ENV=development
+debug: DEBUG_FLAGS += --debug
 debug: build
 
-release: prepare-prod-env build
+release: reinstall-react build uglify
 
 build: build-css build-js
 
-prepare-prod-env: export NODE_ENV=production
-prepare-prod-env:
+reinstall-react:
 	npm uninstall react
-	echo $$NODE_ENV
 	npm install react
 
 install:
