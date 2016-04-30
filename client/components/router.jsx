@@ -62,6 +62,17 @@ class Router extends React.Component {
 			return;
 		});
 
+		// Menu is loaded on initial load and never changes, so we don't need
+		// to go to the server to re-render that
+		urlRouter('/menu', function ( ctx ) {
+			self.setState({
+				template: {
+					type: 'menu',
+					title: 'Menu'
+				},
+			});
+		});
+
 		urlRouter( '*', function ( ctx ) {
 			if (self.state.ajaxState === ajaxStates.LOADING){
 				return;
