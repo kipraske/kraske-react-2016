@@ -6,9 +6,14 @@ var React = require( 'react' );
 var ReactDOM = require('react-dom');
 var Router = require( './router.jsx' );
 var isRunnable = require('../js/progressive.js');
+var hasInitialData = (typeof initialReactData !== 'undefined');
 
-if (isRunnable){
+if (isRunnable && hasInitialData){
   var reactRoot = document.getElementById( 'app-root' );
-  var pageRoot = document.getElementById( 'page' );
-  ReactDOM.render(<Router initialPage={pageRoot.innerHTML} initialBodyClass={pageRoot.className}/>, reactRoot);
+  var contentArea = document.querySelector( '.entry-content' );
+  var innerContentArea;
+  if (contentArea){
+    var innerContentArea = contentArea.innerHTML;
+  }
+  ReactDOM.render(<Router initialData={initialReactData} initialContent={innerContentArea} />, reactRoot);
 }

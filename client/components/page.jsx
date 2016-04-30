@@ -20,18 +20,24 @@ class Page extends React.Component {
 
 	constructor(props){
 		super(props);
+
 		this.state = {
-			colorPalette: 'color-palette-1',
-			pageClass: ''
+			colorPalette: this.palleteClassfromPageClass(props.bodyClass),
+			pageClass: this.pageClasswithoutPalleteClass(props.bodyClass)
 		}
 	}
 
 	componentWillReceiveProps(nextProps){
-		var pageClass = nextProps.bodyClass || nextProps.initialPageClass;
-		var newPaletteClass = pageClass.match(/color-palette-\d/)[0];
-		var newClassList = pageClass.replace(/\s?color-palette-\d/g, '');
-		this.setState({colorPalette: newPaletteClass});
-		this.setState({pageClass: newClassList});
+		this.setState({
+			colorPalette: this.palleteClassfromPageClass(nextProps.bodyClass),
+			pageClass: this.pageClasswithoutPalleteClass(nextProps.bodyClass)
+		});
+	}
+
+	componentWillMount(){
+		window.requestAnimationFrame( () => {
+			this.applyPalette();
+		});
 	}
 
 	componentDidUpdate(){
@@ -57,16 +63,15 @@ class Page extends React.Component {
 		this.refs.pageContainer.className = this.state.pageClass + ' ' + this.state.colorPalette;
 	}
 
+	palleteClassfromPageClass(pageClass){
+		return pageClass.match(/color-palette-\d/)[0];
+	}
+
+	pageClasswithoutPalleteClass(pageClass){
+		return pageClass.replace(/\s?color-palette-\d/g, '');
+	}
+
 	render(){
-
-		// If we passed in intial page html instead of a post object render
-		// that instead of the "real" react app
-		if (!this.props.hasServerData){
-			var intialPageHTML = {__html: this.props.initialPage};
-			return <div id="page" ref="pageContainer" className={this.props.initialPageClass} dangerouslySetInnerHTML={intialPageHTML} />
-		}
-
-		// This is the normal post-renderer react apps
 		var contentElement;
 		var contentHeader;
 		var postNav;

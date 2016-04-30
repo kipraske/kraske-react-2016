@@ -17,12 +17,20 @@ class Router extends React.Component {
 
 	constructor(props) {
 		super(props);
+
     this.state = {
-			hasServerData: false,
 			ajaxState: ajaxStates.INITIAL,
-			posts: [],
-			initialPage: this.props.initialPage,
-			initialPageClass: props.initialBodyClass,
+			posts: props.initialData.posts,
+			menu: props.initialData.primary_menu,
+			postNav: props.initialData.post_nav,
+			bodyClass: props.initialData.body_class,
+			template: props.initialData.template,
+			ajaxState: ajaxStates.DONE,
+		}
+
+		// Separately load content, it is possibly lots of data
+		if (props.initialData.posts.length === 1 ){
+			this.state.posts[0].content = props.initialContent;
 		}
 	}
 
@@ -80,9 +88,7 @@ class Router extends React.Component {
 					}
 
 					self.setState({
-						hasServerData: true,
 						posts: data.posts,
-						menu: data.primary_menu,
 						postNav: data.post_nav,
 						bodyClass: data.body_class,
 						template: data.template,
