@@ -5,13 +5,14 @@ NODE_BIN := node_modules/.bin
 debug: DEBUG_FLAGS += --debug
 debug: build
 
-release: build uglify
+release: reinstall-react build uglify
 
 build: build-css build-js
 
 reinstall-react:
-	npm uninstall react
-	npm install react
+	export NODE_ENV=production
+	npm uninstall react react-dom
+	npm install react react-dom
 
 install:
 	npm install
