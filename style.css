@@ -884,6 +884,9 @@ textarea {
   .main-navigation .sub-menu .menu-item:before {
     content: ''; }
 
+.site.page .entry-header {
+  margin: 3em 0; }
+
 .search-form {
   position: relative; }
   .search-form .search-field {

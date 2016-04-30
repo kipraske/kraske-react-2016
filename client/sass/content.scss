@@ -79,7 +79,7 @@
 .site.page {
 	.entry-header {
 		text-align: center;
-		margin: 5em 0 3em 0;
+		margin: 4em 0 3em 0;
 
 		.post-category,
 		.posted-on{
@@ -175,6 +175,12 @@
 	.sub-menu .menu-item:before{
 		content: ''; // no dots for submenu!
 	}
+}
+
+// Most of the styles the same for single and page, but we need to
+// adjust the header up since there is no meta on pages
+.site.page .entry-header{
+	margin: 3em 0;
 }
 
 .search-form{
