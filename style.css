@@ -811,10 +811,9 @@ textarea {
     margin-top: 0; }
   .rollup-item .entry-cat-icon {
     font-size: 3em;
-    position: absolute;
-    left: 0.4em;
+    padding-left: 0.3em;
     line-height: 1em;
-    top: 0.5em; }
+    float: left; }
 
 .site.single .entry-header,
 .site.page .entry-header {
