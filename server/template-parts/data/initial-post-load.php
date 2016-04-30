@@ -13,7 +13,7 @@ return array(
 	// content => wp_kses_post( apply_filters( 'the_content', get_the_content() ) ),
 	date => get_the_date(),
 	excerpt => esc_html( get_the_excerpt() ),
-	title => esc_html( get_the_title() ),
+	title => wp_kses_post( get_the_title() ),
 	template_tags => array(
 		category => array(
 			'icon' => kraske_react_2016_get_category_icon(),

@@ -121,6 +121,12 @@ require get_template_directory() . '/server/inc/customizer.php';
 require get_template_directory() . '/server/inc/return-instead.php';
 
 /**
+ * React doesn't do well with HTML entities, we should just use unicode in
+ * our titles directly
+ */
+remove_filter('the_title', 'wptexturize');
+
+/**
 * Returns the template type and title for the current page, used for
 * routing on the react end of things
 *
