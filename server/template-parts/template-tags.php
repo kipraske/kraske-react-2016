@@ -58,7 +58,7 @@ function kraske_react_2016_get_category_icon( ){
 		'ukulele'       => '&#x1F3B6',
 		'flute'         => '&#x1F3B6',
 		'web-dev'       => '&#x1F4BB',
-		'excercise'     => '&#x1F3CB',
+		'excercise'     => '&#x1F4AA',
 		'board-games'   => '&#x1F3B2',
 		'video-games'   => '&#x1F3AE',
 	);
