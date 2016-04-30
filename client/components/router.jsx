@@ -54,12 +54,11 @@ class Router extends React.Component {
 	componentDidMount() {
 		var self = this;
 
-		// For a static homepage wordpress doesn't know to fetch the page instead
-		// of the default rollup, so we can't use the react routing in this case
+		// By default our return-instead will return the default posts rollup
+		// regardless of static homepage setting. So we need to manually go
+		// to the homepage on the client to get the right content
 		urlRouter( '/', function ( ctx ) {
-			urlRouter.stop();
-			window.location.href = ctx.canonicalPath
-			return;
+			urlRouter('/home');
 		});
 
 		// Menu is loaded on initial load and never changes, so we don't need
@@ -73,6 +72,10 @@ class Router extends React.Component {
 			});
 		});
 
+		// Crux of theme router. All links are have a special query string appended
+		// which let's wordpress know to return post data instead of the entire
+		// page reload. If wordpress doesn't return data, the router is torn down
+		// and you navigate normally
 		urlRouter( '*', function ( ctx ) {
 			if (self.state.ajaxState === ajaxStates.LOADING){
 				return;
