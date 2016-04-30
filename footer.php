@@ -23,6 +23,8 @@
 	</div><!-- #page -->
 </div><!-- #app-root -->
 
+<?php rewind_posts() ?>
+<?php the_initial_react_data() ?>
 <?php wp_footer(); ?>
 
 </body>

@@ -1,6 +1,7 @@
 <?php
 /**
- * Data for react post update
+ * Data for initial post update, it is the same really as the normal
+ * filtered-post.php but we don't include the potentially huge content area
  */
 
 return array(
@@ -9,7 +10,7 @@ return array(
 	permalink => esc_url( get_permalink() ),
 	post_type => get_post_type(),
 	css_class => esc_attr( join( ' ', get_post_class() ) ),
-	content => wp_kses_post( apply_filters( 'the_content', get_the_content() ) ),
+	// content => wp_kses_post( apply_filters( 'the_content', get_the_content() ) ),
 	date => get_the_date(),
 	excerpt => esc_html( get_the_excerpt() ),
 	title => esc_html( get_the_title() ),

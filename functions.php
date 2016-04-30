@@ -156,3 +156,38 @@ function kraske_react_2016_get_template() {
 
 	return $template;
 }
+
+/**
+ * Initial data load, load it right in the footer... not really a script
+ * though since I am using it inline so I am not sure at the moment
+ * how to localize this. This loops though th main query again so
+ * make sure you rewind that first
+ */
+function the_initial_react_data(){
+	$filtered_posts = array();
+	while ( have_posts() ) {
+		the_post();
+		$filtered_posts[] = require( get_template_directory() . '/server/template-parts/data/initial-post-load.php');
+	}
+
+	$return_data = array(
+		template => kraske_react_2016_get_template(),
+		// Only need primary menu on intiial load since it won't change
+		// from page to page
+		primary_menu => kraske_react_2016_get_primary_menu(),
+		post_nav => get_the_posts_navigation(),
+		body_class => kraske_react_2016_body_class_str(),
+		posts => $filtered_posts,
+	);
+
+	$the_initial_data = json_encode($return_data);
+	if ( ! $the_initial_data ){
+		return;
+	}
+
+	?>
+	<script type="text/javascript">
+		var initialReactData = <?php echo $the_initial_data ?>;
+	</script>
+	<?php
+}
