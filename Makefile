@@ -5,7 +5,7 @@ NODE_BIN := node_modules/.bin
 debug: DEBUG_FLAGS += --debug
 debug: build
 
-release: reinstall-react build uglify
+release: build uglify
 
 build: build-css build-js
 
