@@ -17,24 +17,23 @@ function add_emoji_icon_field( $taxonomy ) {
 
 add_action( 'category_edit_form_fields', 'edit_emoji_icon_field', 10, 2 );
 function edit_emoji_icon_field( $term, $taxonomy ) {
-	$emoji = get_term_meta( $term->term_id, 'category-emoji', true );
+	$emoji = get_term_meta( $term->term_id, 'term-emoji', true );
 	?>
 	<tr class="form-field term-emoji-wrap">
 		<th scope="row"><label for="feature-group"><?php _e( 'Display Emoji', 'my_plugin' ); ?></label></th>
-		<td><input name="term-emoji" id="category-emoji" value="<?php esc_attr( $emoji ) ?>" ></td>
+		<td><input name="term-emoji" id="category-emoji" value="<?php echo esc_attr( $emoji ) ?>" ></td>
 	</tr>
 <?php
 }
 
-		add_action( 'edit_category', 'save_feature_meta', 10, 2 );
-		function save_feature_meta( $term_id, $tt_id ){
-			var_dump( 'succss' );
-			// if( isset( $_POST['feature-group'] ) && '' !== $_POST['feature-group'] ){
-			//     $group = sanitize_title( $_POST['feature-group'] );
-			//     add_term_meta( $term_id, 'feature-group', $group, true );
-			// }
-		}
-
+add_action( 'created_category', 'save_category_emoji_meta', 10, 2 );
+add_action( 'edit_category', 'save_category_emoji_meta', 10, 2 );
+function save_category_emoji_meta( $term_id, $tt_id ) {
+	if ( isset( $_POST['term-emoji'] ) && '' !== $_POST['term-emoji'] ) {
+		$emoji = sanitize_title( $_POST['term-emoji'] );
+		$test = update_term_meta( $term_id, 'term-emoji', $emoji );
+	}
+}
 
 		// -----------------
 		// Displaying the column
