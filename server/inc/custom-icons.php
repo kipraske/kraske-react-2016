@@ -4,22 +4,27 @@
 * Fancy Emoji Icons backend functionality
 */
 
-add_action( 'category_add_form_fields', 'add_feature_group_field', 10, 2 );
-function add_feature_group_field( $taxonomy ) {
-	var_dump('here');
-	// 	global $feature_groups;
-	// 	// get current group
-	// $feature_group = get_term_meta( $term->term_id, 'feature-group', true );
-	//
-	// 	?><div class="form-field term-group">
-	// 		<label for="featuret-group"><?php _e('Feature Group', 'my_plugin'); ?></label>
-	// 		<select class="postform" id="equipment-group" name="feature-group">
-		// 			<option value="-1"><?php _e('none', 'my_plugin'); ?></option><?php foreach ($feature_groups as $_group_key => $_group) : ?>
-			// 				<option value="<?php echo $_group_key; ?>" class=""><?php echo $_group; ?></option>
-			// 			<?php endforeach; ?>
-			// 		</select>
-			// 	</div><?php
-		}
+
+add_action( 'category_add_form_fields', 'add_emoji_icon_field', 10, 2 );
+function add_emoji_icon_field( $taxonomy ) {
+?>
+	<div class="form-field term-emoji-wrap">
+		<label for="term-emoji"><?php _e( 'Display Emoji', 'my_plugin' ); ?></label>
+		<input name="term-emoji" id="category-emoji" value="<?php esc_attr( $emoji ) ?>" >
+	</div>
+<?php
+}
+
+add_action( 'category_edit_form_fields', 'edit_emoji_icon_field', 10, 2 );
+function edit_emoji_icon_field( $term, $taxonomy ) {
+	$emoji = get_term_meta( $term->term_id, 'category-emoji', true );
+	?>
+	<tr class="form-field term-emoji-wrap">
+		<th scope="row"><label for="feature-group"><?php _e( 'Display Emoji', 'my_plugin' ); ?></label></th>
+		<td><input name="term-emoji" id="category-emoji" value="<?php esc_attr( $emoji ) ?>" ></td>
+	</tr>
+<?php
+}
 
 		add_action( 'edit_category', 'save_feature_meta', 10, 2 );
 		function save_feature_meta( $term_id, $tt_id ){

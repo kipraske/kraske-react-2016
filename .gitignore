@@ -1,3 +1,6 @@
 # node dependencies
 .npm
 node_modules
+
+# editor dependencies
+.tern-project
