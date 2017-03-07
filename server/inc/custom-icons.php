@@ -30,7 +30,7 @@ add_action( 'created_category', 'save_category_emoji_meta', 10, 2 );
 add_action( 'edit_category', 'save_category_emoji_meta', 10, 2 );
 function save_category_emoji_meta( $term_id, $tt_id ) {
 	if ( isset( $_POST['term-emoji'] ) && '' !== $_POST['term-emoji'] ) {
-		$emoji = sanitize_title( $_POST['term-emoji'] );
+		$emoji = wp_kses_post( $_POST['term-emoji'] );
 		$test = update_term_meta( $term_id, 'term-emoji', $emoji );
 	}
 }
