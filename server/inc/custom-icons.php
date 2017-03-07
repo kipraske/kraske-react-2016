@@ -35,31 +35,29 @@ function save_category_emoji_meta( $term_id, $tt_id ) {
 	}
 }
 
-		// -----------------
-		// Displaying the column
-		//
-		add_filter('manage_edit-category_columns', 'add_feature_group_column' );
+// -----------------
+// Displaying the column
+//
+add_filter( 'manage_edit-category_columns', 'add_category_emoji_column' );
 
-		function add_feature_group_column( $columns ){
-			$columns['feature_group'] = __( 'Group', 'my_plugin' );
-			return $columns;
-		}
+function add_category_emoji_column( $columns ) {
+	$columns['term_emoji'] = __( 'Display Emoji', 'my_plugin' );
+	return $columns;
+}
 
-		add_filter('manage_category_custom_column', 'add_feature_group_column_content', 10, 3 );
+add_filter( 'manage_category_custom_column', 'add_category_emoji_column_content', 10, 3 );
+function add_category_emoji_column_content( $content, $column_name, $term_id ) {
 
-		function add_feature_group_column_content( $content, $column_name, $term_id ){
-			global $feature_groups;
+	if ( $column_name !== 'term_emoji' ){
+		return $content;
+	}
 
-			if( $column_name !== 'feature_group' ){
-				return $content;
-			}
+	$term_id = absint( $term_id );
+	$emoji = get_term_meta( $term_id, 'term-emoji', true );
 
-			$term_id = absint( $term_id );
-			$feature_group = get_term_meta( $term_id, 'feature-group', true );
+	if ( ! empty( $emoji ) ) {
+		$content .= esc_html( $emoji );
+	}
 
-			if( !empty( $feature_group ) ){
-				$content .= esc_attr( $feature_groups[ $feature_group ] );
-			}
-
-			return $content;
-		}
+	return $content;
+}
