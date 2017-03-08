@@ -3,7 +3,7 @@ Theme Name: Kraske-react-2016
 Author: Kip Raske
 Author URI: http://kristoferraske.com
 Description: Theme utilizing react.js and the wordpress REST API, but still should work where those things are not available.
-Version: 0.0.0
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: kraske-react-2016
@@ -332,7 +332,6 @@ http://emojisymbols.com/
 @font-face {
   font-family: 'Emoji';
   src: url("client/static/assets/EmojiSymbols-Regular.woff"); }
-
 .entry-cat-icon,
 .search-submit {
   font-family: 'Emoji', sans-serif; }
@@ -407,120 +406,92 @@ http://emojisymbols.com/
  */
 .color-palette-1 a {
   color: royalblue; }
-
 .color-palette-1 a:hover,
 .color-palette-1 a:focus,
 .color-palette-1 a:active {
   color: midnightblue; }
-
 .color-palette-1 .site-header,
 .color-palette-1 .site-footer,
 .color-palette-1 .site-logo {
   box-shadow: 0 0 1em 0.25em midnightblue; }
-
 .color-palette-1 .site-logo {
   border: solid 1px midnightblue; }
-
 .color-palette-1 .entry-cat-icon {
   text-shadow: 0 0 0.2em midnightblue; }
-
 .color-palette-1 .search-form .search-field:focus {
   box-shadow: 0 0 1em 0.25em midnightblue; }
-
 .color-palette-1 .search-form .search-submit:focus {
   box-shadow: 0 0 1em 0.25em midnightblue;
   text-shadow: 0 0 0.2em midnightblue; }
-
 .color-palette-1 .search-form .search-submit:hover {
   background-color: midnightblue;
   color: white; }
 
 .color-palette-2 a {
   color: #B90239; }
-
 .color-palette-2 a:hover,
 .color-palette-2 a:focus,
 .color-palette-2 a:active {
   color: #800025; }
-
 .color-palette-2 .site-header,
 .color-palette-2 .site-footer,
 .color-palette-2 .site-logo {
   box-shadow: 0 0 1em 0.25em #800025; }
-
 .color-palette-2 .site-logo {
   border: solid 1px #800025; }
-
 .color-palette-2 .entry-cat-icon {
   text-shadow: 0 0 0.2em #800025; }
-
 .color-palette-2 .search-form .search-field:focus {
   box-shadow: 0 0 1em 0.25em #800025; }
-
 .color-palette-2 .search-form .search-submit:focus {
   box-shadow: 0 0 1em 0.25em #800025;
   text-shadow: 0 0 0.2em #800025; }
-
 .color-palette-2 .search-form .search-submit:hover {
   background-color: #800025;
   color: white; }
 
 .color-palette-3 a {
   color: #347200; }
-
 .color-palette-3 a:hover,
 .color-palette-3 a:focus,
 .color-palette-3 a:active {
   color: #144A00; }
-
 .color-palette-3 .site-header,
 .color-palette-3 .site-footer,
 .color-palette-3 .site-logo {
   box-shadow: 0 0 1em 0.25em #144A00; }
-
 .color-palette-3 .site-logo {
   border: solid 1px #144A00; }
-
 .color-palette-3 .entry-cat-icon {
   text-shadow: 0 0 0.2em #144A00; }
-
 .color-palette-3 .search-form .search-field:focus {
   box-shadow: 0 0 1em 0.25em #144A00; }
-
 .color-palette-3 .search-form .search-submit:focus {
   box-shadow: 0 0 1em 0.25em #144A00;
   text-shadow: 0 0 0.2em #144A00; }
-
 .color-palette-3 .search-form .search-submit:hover {
   background-color: #144A00;
   color: white; }
 
 .color-palette-4 a {
   color: #006C6C; }
-
 .color-palette-4 a:hover,
 .color-palette-4 a:focus,
 .color-palette-4 a:active {
   color: #004F80; }
-
 .color-palette-4 .site-header,
 .color-palette-4 .site-footer,
 .color-palette-4 .site-logo {
   box-shadow: 0 0 1em 0.25em #004F80; }
-
 .color-palette-4 .site-logo {
   border: solid 1px #004F80; }
-
 .color-palette-4 .entry-cat-icon {
   text-shadow: 0 0 0.2em #004F80; }
-
 .color-palette-4 .search-form .search-field:focus {
   box-shadow: 0 0 1em 0.25em #004F80; }
-
 .color-palette-4 .search-form .search-submit:focus {
   box-shadow: 0 0 1em 0.25em #004F80;
   text-shadow: 0 0 0.2em #004F80; }
-
 .color-palette-4 .search-form .search-submit:hover {
   background-color: #004F80;
   color: white; }
@@ -554,7 +525,6 @@ a {
 .color-palette-transition a {
   color: black;
   transition: none; }
-
 .color-palette-transition .site-header,
 .color-palette-transition .site-footer,
 .color-palette-transition .site-logo,
@@ -732,7 +702,6 @@ textarea {
 @media screen and (max-width: 782px) {
   .admin-bar .site-logo {
     top: calc(1em + 46px); } }
-
 .site-logo img {
   display: block;
   position: relative;
@@ -756,16 +725,19 @@ textarea {
 @media screen and (max-width: 640px) {
   .site-header {
     margin-top: 1em; }
+
   .site-logo {
     width: 3em; }
+
   .site-footer {
     height: 5em; }
+
   .site-footer:before {
     height: 4.5em; }
+
   .site-info {
     padding: 1.5em 0;
     line-height: 1.5em; } }
-
 /**
 * Stuff for the post-content things. This includes both single and post things
 * Since the menu is really its own page too this shares those styles too
@@ -777,7 +749,6 @@ textarea {
 @media screen and (max-width: 660px) {
   .site-content {
     margin: 0 20px; } }
-
 .rollup-title {
   text-align: center;
   margin: 0 0 0.5em 0; }
@@ -828,7 +799,6 @@ textarea {
   .site.page .entry-header h1 {
     margin-bottom: 0;
     line-height: 1em; }
-
 @media screen and (max-width: 640px) {
   .site.single .entry-header,
   .site.page .entry-header {
@@ -839,7 +809,6 @@ textarea {
     .site.page .entry-header .post-category,
     .site.page .entry-header .posted-on {
       margin-left: 20px; } }
-
 .site.single .entry-content p:first-child:first-letter,
 .site.page .entry-content p:first-child:first-letter {
   font-size: 4em;
