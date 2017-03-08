@@ -44,29 +44,18 @@ function kraske_react_2016_category_list(){
 }
 
 /**
-* One day taxononomies may have meta, but for now let's just hardcode this in thered
+* Get the icon for the category. Only one category icon will be shown
+* so this just gets the first one.
 */
-function kraske_react_2016_get_category_icon( ){
+function kraske_react_2016_get_category_icon(){
 	$categories = get_the_category();
 	$category = $categories[0]; // just make an icon for the first one
 
-	// Note the icon font just uses another font for the old unicode symbols
-	// so to keep the same size use the newer unicode blocks (1Fxxx)
-	$unicodeCatMap = array(
-		'nothing' => '&#x1F40C', // it's a snail
-		'harmonica'     => '&#x1F3B6',
-		'ukulele'       => '&#x1F3B6',
-		'flute'         => '&#x1F3B6',
-		'web-dev'       => '&#x1F4BB',
-		'excercise'     => '&#x1F4AA',
-		'board-games'   => '&#x1F3B2',
-		'video-games'   => '&#x1F3AE',
-	);
-
-	$icon_html_code = $unicodeCatMap[$category->slug];
+	$emoji = get_term_meta( $category->term_id, 'term-emoji', true );
+	$emoji_char = mb_substr( $emoji, 0, 1 );
 	$category_link = get_category_link( $category->term_id );
 
-	return "<a href='$category_link' title='$category->name' > $icon_html_code </a>";
+	return "<a href='$category_link' title='$category->name' > $emoji_char </a>";
 }
 
 /**
